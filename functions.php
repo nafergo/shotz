@@ -15,7 +15,7 @@ function showinputform($actionpage) {
     echo "</form>";
 }
 
-function listtasks($json_a,$outputformat) {
+function listtasks($json_a,$taskstatus,$outputformat) {
     
 
     switch ($outputformat) {
@@ -35,7 +35,7 @@ function listtasks($json_a,$outputformat) {
             if(is_array($json_a)) {     
                 $tasknumber=1;
                 foreach ($json_a as $item => $task) {
-                    if ($task['status'] == "open") {    
+                    if ($task['status'] == $taskstatus) {    
                         $havetasks=1;
                         
                         switch ($outputformat) {
@@ -53,14 +53,23 @@ function listtasks($json_a,$outputformat) {
                                     #echo "<td>".$priority."</td>";
                                     #action:
                                     echo "<td>";
-                                        #done
-                                        echo "<a href=\"action.php?id=" .$item. "&action=done\"><span class=\"icon small darkgray\" data-icon=\"C\"></span></a>";
-                                        #edit
-                                        echo " - ";
-                                        echo "<a href=\"action.php?id=" .$item. "&action=edit\"><span class=\"icon small darkgray\" data-icon=\"7\"></span></a>";
-                                        #delete
-                                        echo " - ";
-                                        echo "<a href=\"action.php?id=" .$item. "&action=delete\"><span class=\"icon small darkgray\" data-icon=\"T\"></span></a>";
+                                        
+                                    switch ($taskstatus) {
+                                        case 'open':
+                                            #done
+                                            echo "<a href=\"action.php?id=" .$item. "&action=done\"><span class=\"icon small darkgray\" data-icon=\"C\"></span></a>";
+                                            #edit
+                                            echo " - ";
+                                            echo "<a href=\"action.php?id=" .$item. "&action=edit\"><span class=\"icon small darkgray\" data-icon=\"7\"></span></a>";
+                                            #delete
+                                            echo " - ";
+                                            echo "<a href=\"action.php?id=" .$item. "&action=delete\"><span class=\"icon small darkgray\" data-icon=\"T\"></span></a>";
+                                            break;
+
+                                        case 'closed':
+                                             echo "<a href=\"action.php?id=" .$item. "&action=delete\"><span class=\"icon small darkgray\" data-icon=\"T\"></span></a>";
+                                            break;
+                                    }                                        
                                     echo "</td>";
                                 echo "</tr>";
                                 break;
