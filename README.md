@@ -19,4 +19,4 @@ Unzip the file and upload to the web-directory (public_html, /var/www/, /srv/htt
 make the task.json file writable (chmod 777 or 755) by the webserver.
 
 ## License
-see license.txt
+see license.txt.
