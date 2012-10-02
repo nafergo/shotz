@@ -20,9 +20,7 @@
 #THE SOFTWARE.
 */
 
-$file = "task.json";
-$jsonfile = file_get_contents($file);
-$json_a = json_decode($jsonfile, true);
+include("header.php");
 
 if (empty($_GET['action'])) {
 	echo"Error: What do you want me to do? \n<br /><a href=\"index.php\">Go back and try again please.</a>";
