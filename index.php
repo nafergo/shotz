@@ -28,28 +28,13 @@ include("header.php");
 
 	echo "<p></p>";
 
-	listtasks($json_a,"table");
+	listtasks($json_a,"open","table");
 
-	echo"<h2>Finished Tasks</h2>";
-	echo "<ul>";
-		if(is_array($json_a)) {	
-		foreach ($json_a as $item => $task) {
-			if ($task['status'] == "closed") {
-			$closed=1;
-			echo "<li>";
-			echo $task['task'];
-			echo " [ <a href=\"action.php?id=" .$item. "&action=delete\"><span class=\"icon small darkgray\" data-icon=\"T\"></span></a> ] ";		
-			echo "</li>";
-			}	
-		}
+	echo "<p></p>";
+	echo "<h2>Finished tasks</h2>";
+	listtasks($json_a,"closed","table");
 
-		if ($closed == 0) {
-			echo"No finished tasks yet. Please finish a task first.";
-		}
-	} else { 
-		echo"No tasks. Add one first please.";	
-	}		
-	echo "</ul>";
+
 	?>
 </div><!--col_9 -->
 
