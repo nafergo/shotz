@@ -26,7 +26,7 @@ include("functions.php");
 ?>
 <!DOCTYPE html>
 <html><head>
-<title>Task / Todo list by Raymii.org</title>
+<title><?php echo $projectname; ?></title>
 <meta charset="UTF-8">
 <meta name="description" content="" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
@@ -36,4 +36,4 @@ include("functions.php");
 <link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />                  
 <link rel="stylesheet" type="text/css" href="style.css" media="all" />                          
 </head><body><a id="top-of-page"></a><div id="wrap" class="clearfix">
-<div class="col_9">
+<div class="col_12">
