@@ -20,51 +20,97 @@
 #THE SOFTWARE.
 */
 
-$projectname="Tasks";
-$projectversion = "v0.0.3";
 
 $LANG=NULL;
 require('language.en.php');
 
 
-$file="task.json";
+$file="shot.json";
 
 $jsonfile = file_get_contents($file);
 $json_b = json_decode($jsonfile, true);
-$json_a = $json_b["tasks"];
+$json_a = $json_b["shots"];
 $closed=0;
-$havetasks = 0;
+$haveshots = 0;
 error_reporting(0);
 
 
 function showinputform($actionpage) {
     global $LANG;
     $vandaag=date('m-d-Y');
-    echo "<table class=\"striped\">";
+    echo "<table class=\"table-condensed\">";
+    echo "<thead>";
     echo "<tr>";
-    echo "<th><center>".$LANG["task"]."</center></th>";
     echo "<th>".$LANG["priority"]."</th>";
+    echo "<th>".$LANG["scene"]."</th>";
+    echo "<th>".$LANG["shot"]."</th>";
+    echo "<th>".$LANG["frames"]."</th>";
+    echo "<th>".$LANG["user"]."</th>";
+    echo "<th>".$LANG["task"]."</th>";
+    echo "<th>".$LANG["statuse"]."</th>";        
     echo "<th>".$LANG["duedate"]."</th>";
     echo "<th></th>";
     echo "</tr>";
+    echo "</thead>";
+    echo "<tbody>";  
     echo "<tr>";
     echo "<td>";
     echo "<form name=\"edit\" action=\"action.php\" method=\"GET\">";
-    echo "<input name=\"task\" size=40 type=\"text\" placeholder=\"".$LANG["tasktodo"]."\" ></input>";
-    echo "</td><td>";
-    echo "<select name=\"prio\">\n";
+    echo "<select class=\"form-control\" name=\"prio\">\n";
         echo "<option value=\"2\">".$LANG["normal"]."</option>\n";
         echo "<option value=\"1\">".$LANG["high"]."</option>\n";
         echo "<option value=\"3\">".$LANG["low"]."</option>\n";
         echo "<option value=\"4\">".$LANG["onhold"]."</option>\n";
         echo "</select>\n";
+    echo "</td><td>";  
+    echo "<input name=\"scene\" class=\"form-control\" type=\"text\" placeholder=\"".$LANG["shotscene"]."\" ></input>";
     echo "</td><td>";
-    echo "<input name=\"duedate\" type=\"text\" value=\"${vandaag}\"></input>\n";
+    echo "<input name=\"shot\" class=\"form-control\" type=\"text\" placeholder=\"".$LANG["shottodo"]."\" ></input>";
     echo "</td><td>";
+    echo "<input name=\"frames\" class=\"form-control framesinput\" type=\"number\" placeholder=\"".$LANG["framesduration"]."\" ></input>";
+    echo "</td><td>";
+    
+    $users = file('users.txt');
+$options = '';
+foreach ($users as $user) {
+    $options .= '<option value="'.$user.'">'.$user.'</option>';
+}
+$select = '<select class="form-control" name="user" >'.$options.'</select>';
+
+echo $select;
+    
+ //   echo "<input name=\"user\" size=10 type=\"text\" placeholder=\"".$LANG["shotuser"]."\" ></input>";
+	 echo "</td><td>";
+    $tasks = file('tasks.txt');
+$options = '';
+foreach ($tasks as $task) {
+    $options .= '<option value="'.$task.'">'.$task.'</option>';
+}
+$select = '<select class="form-control" name="task">'.$options.'</select>';
+
+echo $select;
+    
+ 
+	 echo "</td><td>";
+
+$statuses = file('statuses.txt');
+$options = '';
+foreach ($statuses as $statuse) {
+    $options .= '<option value="'.$statuse.'">'.$statuse.'</option>';
+}
+$select = '<select class="form-control" name="statuse">'.$options.'</select>';
+
+echo $select;
+    
+ 
+	 echo "</td><td>";
+    echo "<input class=\"form-control\" name=\"duedate\" size=10 type=\"text\" value=\"${vandaag}\"></input>\n";
+    echo "</td><td class=\"pull-right\">";
     echo "<input type=\"hidden\" name=\"action\" value=\"add\"></input>";
     echo "<input name=\"dateadded\" type=\"hidden\" value=\"${vandaag}\"></input>\n";
-    echo "<input type=\"submit\" name=\"submit\" value=\"".$LANG["addtask"]."\"></input>";
-    echo "</form>";
+    echo "<button type=\"submit\" name=\"submit\" class=\"btn btn-default\">".$LANG["addshot"]."</button>";
+    echo "</form>";   
+    echo "</tbody>";    
     echo "</table>";
 }
 
@@ -87,72 +133,115 @@ function dateDiff($start, $end) {
 
 
 
-function listtasks($json_a,$taskstatus,$outputformat) {
+function listshots($json_a,$shotstatus,$outputformat) {
     global $LANG;
     $vandaag=date('d-m-Y');
-    $havetasks = NULL;
+    $haveshots = NULL;
     
     array_sort_by_column($json_a, 'priority');
 
-        echo "<table class=\"sortable striped\">";
+        echo "<table id=\"sortedtable\" class=\"tablesorter table-condensed table-hover table-striped\">";
         echo "<thead>";
         echo "<tr>";
         echo "<th>".$LANG["priority"]."</th>";
+        echo "<th>".$LANG["scene"]."</th>";
+        echo "<th>".$LANG["shot"]."</th>";
+        echo "<th>".$LANG["frames"]."</th>";
+       echo "<th>".$LANG["user"]."</th>";   
         echo "<th>".$LANG["task"]."</th>";
+        echo "<th>".$LANG["statuse"]."</th>";
         echo "<th>".$LANG["daysopen"]."</th>";
         echo "<th>".$LANG["duedate"]."</th>";
 
         echo "<th> </th>";
         echo "</tr>";
         echo "</thead>";
-     
+                    echo "<tbody>";     
 
     if(is_array($json_a)) {     
-        $tasknumber=1;
-        $havetasks=NULL;
-        foreach ($json_a as $item => $task) {
-            if ($task['status'] == $taskstatus) {  
+        $shotnumber=1;
+        $haveshots=NULL;
+        foreach ($json_a as $item => $shot) {
+            if ($shot['status'] == $shotstatus) {  
             
-                $havetasks=1;
+                $haveshots=1;
 
-                    echo "<tr>";
+
+                        echo "<tr id=".$item.">";
                                     #Prio
-                    echo "<td>";
+                    echo "<td class=\"priorities\"><p></p>";
 
-                    switch ($task["priority"]) {
+                    switch ($shot["priority"]) {
                         case 1:
-                            echo "<font color = \"red\" >".$LANG["high"]."</font>";
+                            echo "<i class=\"fa fa-square fa-lg\" style=\"color: #e74c3c;\"></i><font style=\"padding-left:5px;font-weight: bold;\">".$LANG["high"]."</font>";
                             break;
                         case 2:
-                            echo $LANG["normal"];
+                            echo "<i class=\"fa fa-square fa-lg\" style=\"color: #3fc380;\"></i><font style=\"padding-left:5px;\">".$LANG["normal"]."</font>";
                             break;
                         case 3:
-                            echo $LANG["low"];
+                            echo "<i class=\"fa fa-square fa-lg\" style=\"color: #3498db;\"></i><font style=\"padding-left:5px;\">".$LANG["low"]."</font>";
                             break;
                         case 4:
-                            echo "<font color = \"#0011ee\" >".$LANG["onhold"]."</font>";
+                            echo "<i class=\"fa fa-square fa-lg\" style=\"color: #95a5a6;\"></i><font style=\"padding-left:5px;\">".$LANG["onhold"]."</font>";
                             break;
                     }
 
-                    echo "</td>";
+                    echo "<p></p></td>";
                     $dayopen = NULL;
-                                    #task
-                    echo "<td>".$task['task']."</td>";
-                    if ($taskstatus == "open") {
-                        $dayopen = dateDiff(str_replace('-', '/',$task["dateadded"]),$vandaag);
-                    } elseif ($taskstatus == "closed"  || $taskstatus == "deleted" && preg_match('/([0-9]{2}-[0-9]{2}-[0-9]{4})/',$task["donedate"])) {
-                        $dayopen = dateDiff(str_replace('-', '/',$task["dateadded"]),str_replace('-', '/',$task["donedate"]));
+                                    #shot
+                    echo "<td>".$shot['scene']."</td>";
+                    echo "<td>".$shot['shot']."</td>";
+                    if ($shotstatus == "open") {
+                        $dayopen = dateDiff(str_replace('-', '/',$shot["dateadded"]),$vandaag);
+                    } elseif ($shotstatus == "closed"  || $shotstatus == "deleted" && preg_match('/([0-9]{2}-[0-9]{2}-[0-9]{4})/',$shot["donedate"])) {
+                        $dayopen = dateDiff(str_replace('-', '/',$shot["dateadded"]),str_replace('-', '/',$shot["donedate"]));
                        
-                    } elseif ($taskstatus == "closed" || $taskstatus == "deleted" && !preg_match('/([0-9]{2}-[0-9]{2}-[0-9]{4})/',$task["donedate"])) {
+                    } elseif ($shotstatus == "closed" || $shotstatus == "deleted" && !preg_match('/([0-9]{2}-[0-9]{2}-[0-9]{4})/',$shot["donedate"])) {
                         $dayopen = "-";
                     }
+
+                    echo "<td>".$shot['frames']."</td>";
+                    
+ $users = file('users.txt');
+$options = '';
+ $options .= '<option value="'.$shot["user"].'">'.utf8_encode(html_entity_decode($shot["user"])).'</option>';
+foreach ($users as $user) {
+       
+    $options .= '<option value="'.$user.'">'.$user.'</option>';
+}
+$select = '<select class="form-control select_user" name="user" id="'.$item.'">'.$options.'</select>';
+
+echo "<th>".$select."</th>";
+
+
+ $tasks = file('tasks.txt');
+$options = '';
+$options .= '<option value="'.$shot["task"].'">'.utf8_encode(html_entity_decode($shot["task"])).'</option>';
+foreach ($tasks as $task) {
+    $options .= '<option value="'.$task.'">'.$task.'</option>';
+}
+$select = '<select class="form-control select_task" name="task" id="'.$item.'">'.$options.'</select>';
+
+              echo "<th>".$select."</th>";
+
+
+
+   $statuses = file('statuses.txt');
+$options = '';
+$options .= '<option value="'.$shot["statuse"].'">'.utf8_encode(html_entity_decode($shot["statuse"])).'</option>';
+foreach ($statuses as $statuse) {
+    $options .= '<option value="'.$statuse.'">'.$statuse.'</option>';
+}
+$select = '<select class="form-control select_statuse" name="statuse" id="'.$item.'">'.$options.'</select>';
+
+                echo "<th>".$select."</th>";              
 
                     echo "<td>".$dayopen."</td>";
 
                     #due date
                     echo "<td>";
-                    $dayclosed = $task["duedate"];
-                    switch ($task["duedate"]) {
+                    $dayclosed = $shot["duedate"];
+                    switch ($shot["duedate"]) {
                         case '-':
                             echo "-";
                             break;
@@ -160,25 +249,25 @@ function listtasks($json_a,$taskstatus,$outputformat) {
                         default:
                             $matches=NULL;
 
-                            if (preg_match('/([0-9]{2}-[0-9]{2}-[0-9]{4})/', $task["duedate"],$matches)) {
-                                $taskduedate=$matches[0];
-                                $daysclosed = dateDiff($vandaag,str_replace('-', '/',$taskduedate));
+                            if (preg_match('/([0-9]{2}-[0-9]{2}-[0-9]{4})/', $shot["duedate"],$matches)) {
+                                $shotduedate=$matches[0];
+                                $daysclosed = dateDiff($vandaag,str_replace('-', '/',$shotduedate));
                                 
 
                                 if ($daysclosed < 0) {
-                                    $daysclosed = "<u>" .abs($daysclosed) . $LANG["dayslate"] . " (".date('D d M',strtotime(str_replace('-', '/',$taskduedate))).")</u>";
+                                    $daysclosed = "<u>" .abs($daysclosed) . $LANG["dayslate"] . " (".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")</u>";
                                 } elseif ($daysclosed == 0) {
-                                    $daysclosed = "<b>".$LANG["today"]." (".date('D d M',strtotime(str_replace('-', '/',$taskduedate))).")</b>";
+                                    $daysclosed = "<b>".$LANG["today"]." (".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")</b>";
 
 
                                 } else {
-                                        $daysclosed = $daysclosed . $LANG["daysleft"] ." (".date('D d M',strtotime(str_replace('-', '/',$taskduedate))).")";
+                                        $daysclosed = $daysclosed . $LANG["daysleft"] ." (".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")";
                                 }
                             }                            
 
-                            if ($taskstatus == "closed" || $taskstatus == "deleted") {
+                            if ($shotstatus == "closed" || $shotstatus == "deleted") {
 
-                                echo date('D d M',strtotime(str_replace('-', '/',$taskduedate)));
+                                echo date('D d M',strtotime(str_replace('-', '/',$shotduedate)));
                             } else {
                                 echo $daysclosed;
                             }
@@ -190,45 +279,45 @@ function listtasks($json_a,$taskstatus,$outputformat) {
 
                     echo "</td>";
                                     #action:
-                    echo "<td>";
+                    echo "<td class=\"center_me\">";
 
-                    switch ($taskstatus) {
+                    switch ($shotstatus) {
                         case 'open':
                                             #done
-                        echo "<a href=\"action.php?id=" .$item. "&action=done\"><span class=\"icon small darkgray\" data-icon=\"C\"></span></a>";
+                        echo "<a href=\"action.php?id=" .$item. "&action=done\" class=\"pull-left\" rel=\"tooltip\" data-placement=\"top\" alt=\"Shot done!\" title=\"Shot done!\"><i class=\"fa-lg fa fa-check-square-o\"></i></a>";
                                             #edit
                         echo "  ";
-                        echo "<a href=\"action.php?id=" .$item. "&action=edit\"><span class=\"icon small darkgray\" data-icon=\"7\"></span></a>";
+                        echo "<a href=\"action.php?id=" .$item. "&action=edit\" rel=\"tooltip\" data-placement=\"top\" alt=\"Edit\" title=\"Edit\"><i class=\"fa-lg fa fa-pencil-square-o\"></i></a>";
                                             #delete
                         echo "  ";
-                        echo "<a href=\"action.php?id=" . $item . "&action=delete\"><span class=\"icon small darkgray\" data-icon=\"T\"></span></a>";
+                        echo "<a href=\"action.php?id=" . $item . "&action=delete\" class=\"pull-right\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a>";
                         break;
 
                         case 'closed':
-                        echo "<a href=\"action.php?id=" .$item. "&action=delete\"><span class=\"icon small darkgray\" data-icon=\"T\"></span></a>";
+                        echo "  <a href=\"action.php?id=" .$item. "&action=delete\" class=\"pull-right\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a>";
                         break;
                     }                                        
                     echo "</td>";
                     echo "</tr>";
                  
-                $tasknumber+=1;
+                $shotnumber+=1;
             }   
         }
-        if($havetasks == 0) {
+        if($haveshots == 0) {
                
-                echo "<tr><td colspan=6>".$LANG["notasks"]."</td></tr>";  
+                echo "<tr><td colspan=6>".$LANG["noshots"]."</td></tr>";  
              
         }
     } else { 
      
-       echo "<tr><td colspan=6>".$LANG["notasks"]."</td></tr>";  
+       echo "<tr><td colspan=6>".$LANG["noshots"]."</td></tr>";  
     
 }
 
 
     
+    echo "</tbody>";
     echo "</table>";
-
 
 }
 

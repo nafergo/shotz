@@ -1,3 +1,12 @@
+<?php include 'header.php';?>
+
+
+<div class="row">
+
+
+	<div class="col-md-1"></div>
+
+	<div class="col-md-10">
 <?php
 /*
 #Copyright (c) 2012 Remy van Elst
@@ -20,7 +29,7 @@
 #THE SOFTWARE.
 */
 
-include("header.php");
+
 
 
 if (empty($_GET['action'])) {
@@ -28,52 +37,113 @@ if (empty($_GET['action'])) {
 
 } elseif (isset($_GET['action']) && $_GET['action'] == 'edit' ) {
 #toon editformulier 
-	$taskid=htmlspecialchars($_GET['id']);
+	$shotid=htmlspecialchars($_GET['id']);
 	$found=0;
 	echo "<h2>".$LANG["edit"]."</h2>";
-	foreach ($json_a as $item => $task) {
-		if ($item == $taskid) {
+	foreach ($json_a as $item => $shot) {
+		if ($item == $shotid) {
 		$found = 1;
 
-    echo "<table class=\"striped\">";
+    echo "<table class=\"table-condensed\">";
     echo "<tr>";
-    echo "<th>".$LANG["task"]."</th>";
     echo "<th>".$LANG["priority"]."</th>";
+    echo "<th>".$LANG["scene"]."</th>";
+    echo "<th>".$LANG["shot"]."</th>";
+    echo "<th>".$LANG["frames"]."</th>";
+    echo "<th>".$LANG["user"]."</th>";
+    echo "<th>".$LANG["task"]."</th>";
+    echo "<th>".$LANG["statuse"]."</th>";
     echo "<th>".$LANG["duedate"]."</th>";
-    echo "<th>".$LANG[""]."</th>";
+    echo "<th>".$LANG["addsomething"]."</th>";
     echo "</tr>";
     echo "<tr>";
     echo "<td>";
     echo "<form name=\"edit\" action=\"action.php\" method=\"GET\">";
-    echo "<input name=\"task\" type=\"text\" value=\"".$task["task"]."\" ></input>";
-    echo "</td><td>";
-    echo "<select name=\"prio\">\n";
+    echo "<select class=\"form-control\" name=\"prio\">\n";
         echo "<option value=\"2\">".$LANG["normal"]."</option>\n";
         echo "<option value=\"1\">".$LANG["high"]."</option>\n";
         echo "<option value=\"3\">".$LANG["low"]."</option>\n";
         echo "<option value=\"4\">".$LANG["onhold"]."</option>\n";
         echo "</select>\n";
-    echo "</td><td>";
-    echo "<input name=\"duedate\" type=\"text\" value=\"".$task["duedate"]."\"></input>\n";
-    echo "</td><td>";
+    echo "</td>";
+    echo "<td>";
+    echo "<input class=\"form-control\" name=\"scene\" type=\"text\" value=\"".$shot["scene"]."\" ></input>";
+    echo "</td>";
+    echo "<td>";
+    echo "<input class=\"form-control\" name=\"shot\" type=\"text\" value=\"".$shot["shot"]."\" ></input>";
+    echo "</td>";
+
+    echo "<td>";
+    echo "<input class=\"form-control framesinput\" name=\"frames\" type=\"number\" value=\"".$shot["frames"]."\" ></input>";
+    echo "</td>";
+
+    echo "<td>";
+
+$users = file('users.txt');
+$options = '';
+foreach ($users as $user) {
+    $options .= '<option value="'.$user.'">'.$user.'</option>';
+}
+$select = '<select class="form-control" name="user">'.$options.'</select>';
+
+echo $select;
+
+    //echo "<input name=\"user\" size=10 type=\"text\" value=\"".$shot["user"]."\" ></input>";
+    echo "</td>";
+    echo "<td>";
+
+$tasks = file('tasks.txt');
+$options = '';
+foreach ($tasks as $task) {
+    $options .= '<option value="'.$task.'">'.$task.'</option>';
+}
+$select = '<select class="form-control" name="task">'.$options.'</select>';
+
+echo $select;
+
+    echo "</td>";
+    echo "<td>";
+
+$statuses = file('statuses.txt');
+$options = '';
+foreach ($statuses as $statuse) {
+    $options .= '<option value="'.$statuse.'">'.$statuse.'</option>';
+}
+$select = '<select class="form-control" name="statuse">'.$options.'</select>';
+
+echo $select;
+
+    echo "</td>";
+    echo "<td>";
+    echo "<input class=\"form-control\" name=\"duedate\" size=10 type=\"text\" value=\"".$shot["duedate"]."\"></input>\n";
+    echo "</td>";
+    echo "<td class=\"center_me\">";
     echo "<input type=\"hidden\" name=\"action\" value=\"update\"></input>";
-    echo "<input name=\"dateadded\" type=\"hidden\" value=\"".$task["dateadded"]."\"></input>\n";
+    echo "<input name=\"dateadded\" type=\"hidden\" value=\"".$shot["dateadded"]."\"></input>\n";
     echo "<input type=\"hidden\" name=\"id\" value=\"".  $item ."\"></input>";
-    echo "<input type=\"submit\" name=\"submit\" value=\"".$LANG["updatetask"]."\"></input>";
+    echo "<button type=\"submit\" name=\"submit\" class=\"btn btn-default\">".$LANG["updateshot"]."</button>";
+        
     echo "</form>";
+    echo "</td>";
+    echo "</tr>";
     echo "</table>";
 		}
 	}		
 		
 	if ($found == 0) {
-		echo $LANG["etasknotfound"];
+		echo $LANG["eshotnotfound"];
 	} 
 	
-} elseif (isset($_GET['submit']) && $_GET['action'] == 'update' && !empty($_GET['id']) && !empty($_GET['task']) && !empty($_GET['prio'])) {
-#update task
-	$taskid=htmlspecialchars($_GET['id']);
-	$senttask=htmlspecialchars($_GET['task']);
+} elseif (isset($_GET['submit']) && $_GET['action'] == 'update' && !empty($_GET['id']) && !empty($_GET['shot']) && !empty($_GET['prio'])) {
+#update shot
+	$shotid=htmlspecialchars($_GET['id']);
+	$sentshot=htmlspecialchars($_GET['shot']);
 	$duedate=htmlspecialchars($_GET['duedate']);
+	$scene=htmlspecialchars($_GET['scene']);
+	$frames=htmlspecialchars($_GET['frames']);	
+	$user=htmlspecialchars($_GET['user']);
+	$task=htmlspecialchars($_GET['task']);
+	$statuse=htmlspecialchars($_GET['statuse']);
 	# If the due date is empty we replace it with a dash. 
 	if (empty($duedate) || !preg_match('/([0-9]{2}-[0-9]{2}-[0-9]{4})/',$duedate)) {
 		$duedate = "-";
@@ -85,33 +155,38 @@ if (empty($_GET['action'])) {
 	if ($priority != "1" && $priority != "2" && $priority != "3" && $priority != "4") {
 		$priority = 2;
 	}
-	foreach ($json_a as $item => $task) {
-		if ($item == $taskid) {
+	foreach ($json_a as $item => $shot) {
+		if ($item == $shotid) {
 			$found = 1;
 			$current = file_get_contents($file);
 			$current = json_decode($current, TRUE);
-			$json_update["tasks"]["$item"] = array("task" => $senttask, "status" => "open", "duedate" => $duedate, "dateadded" => $task["dateadded"], "priority" => $priority);
+			$json_update["shots"]["$item"] = array("shot" => $sentshot, "status" => "open", "duedate" => $duedate, "dateadded" => $shot["dateadded"], "priority" => $priority, "scene" => $scene, "frames" => $frames, "user" => $user, "task" => $task, "statuse" => $statuse);
 			$replaced = array_replace_recursive($current, $json_update);
 			$replaced = json_encode($replaced);
 			if(file_put_contents($file, $replaced, LOCK_EX)) {
-				echo $LANG["taskupdated"];
+				echo $LANG["shotupdated"];
 				echo $LANG["redirected"];
 				redirect();
 			} else {
-				echo $LANG["eupdatetask"];
+				echo $LANG["eupdateshot"];
 			}
 		}
 	}
 	if ($found==0) {
-		echo $LANG["etasknotfound"];
+		echo $LANG["eshotnotfound"];
 		echo $LANG["redirected"];
 		redirect();
 	}
 	
-} elseif (isset($_GET['submit']) && $_GET['action'] == 'add' && !empty($_GET['task']) && !empty($_GET['prio'])) {
-	#add task
+} elseif (isset($_GET['submit']) && $_GET['action'] == 'add' && !empty($_GET['shot']) && !empty($_GET['scene']) && !empty($_GET['frames']) && !empty($_GET['user']) && !empty($_GET['task']) && !empty($_GET['statuse']) && !empty($_GET['prio'])) {
+	#add shot
 	$id=substr(md5(rand()), 0, 20);
+	$shot=htmlspecialchars($_GET['shot']);
+	$scene=htmlspecialchars($_GET['scene']);
+	$frames=htmlspecialchars($_GET['frames']);
+	$user=htmlspecialchars($_GET['user']);
 	$task=htmlspecialchars($_GET['task']);
+	$statuse=htmlspecialchars($_GET['statuse']);
 	$duedate=htmlspecialchars($_GET['duedate']);
 	# If the due date is empty we replace it with a dash. And if the due date is in the past we also do that.
 	if (empty($duedate)) {
@@ -128,7 +203,7 @@ if (empty($_GET['action'])) {
 	}
 	$current = file_get_contents($file);
 	$current = json_decode($current, TRUE);
-	$json_add["tasks"]["$id"] = array("task" => $task, "status" => "open", "duedate" => $duedate, "dateadded" => $dateadded, "priority" => $priority);
+	$json_add["shots"]["$id"] = array("shot" => $shot, "status" => "open", "duedate" => $duedate, "dateadded" => $dateadded, "scene" => $scene, "frames" => $frames, "user" => $user,  "task" => $task, "statuse" => $statuse, "priority" => $priority);
 		
 		
 
@@ -140,67 +215,67 @@ if (empty($_GET['action'])) {
 
 	$current=json_encode($current);	
 	if(file_put_contents($file, $current, LOCK_EX)) {
-		echo $LANG["taskadded"];
+		echo $LANG["shotadded"];
 		echo $LANG["redirected"];
 		redirect();
 	} else {
-		echo $LANG["etasknotadded"];
+		echo $LANG["eshotnotadded"];
 		echo $LANG["redirected"];
 		redirect();
 	}
 } elseif (isset($_GET['action']) && $_GET['action'] == 'done' && !empty($_GET['id'])) {
-	#task is done
-	$taskid=htmlspecialchars($_GET['id']);
+	#shot is done
+	$shotid=htmlspecialchars($_GET['id']);
 	$vandaag=date('m-d-Y');
-	foreach ($json_a as $item => $task) {
-		if ($item == $taskid) {
+	foreach ($json_a as $item => $shot) {
+		if ($item == $shotid) {
 			$found = 1;
 			$current = file_get_contents($file);
 			$current = json_decode($current, TRUE);
-			$json_done["tasks"]["$taskid"] = array("task" => $task['task'], "status" => "closed", "duedate" => $task["duedate"], "dateadded" => $task["dateadded"], "priority" => $task["priority"], "donedate" => $vandaag);
+			$json_done["shots"]["$shotid"] = array("shot" => $shot['shot'], "status" => "closed", "duedate" => $shot["duedate"], "dateadded" => $shot["dateadded"], "priority" => $shot["priority"], "scene" => $shot["scene"], "frames" => $shot["frames"], "user" => $shot["user"], "task" => $shot["task"], "statuse" => $shot["statuse"], "donedate" => $vandaag);
 			$done = array_replace_recursive($current, $json_done);
 			$done = json_encode($done);
 			if(file_put_contents($file, $done, LOCK_EX)) {
-				echo $LANG["taskdone"];
+				echo $LANG["shotdone"];
 				echo $LANG["redirected"];
 				redirect();
 			} else {
-				echo $LANG["etasknotdone"];
+				echo $LANG["eshotnotdone"];
 				echo $LANG["redirected"];
 				redirect();
 			}
 		}
 	}
 	if ($found==0) {
-		echo $LANG["etasknotfound"];
+		echo $LANG["eshotnotfound"];
 		echo $LANG["redirected"];
 		redirect();
 	}
 } elseif (isset($_GET['action']) && $_GET['action'] == 'delete' && !empty($_GET['id'])) {
-#delete task
-	#task is done
-	$taskid=htmlspecialchars($_GET['id']);
-	foreach ($json_a as $item => $task) {
-		if ($item == $taskid) {
+#delete shot
+	#shot is done
+	$shotid=htmlspecialchars($_GET['id']);
+	foreach ($json_a as $item => $shot) {
+		if ($item == $shotid) {
 			$found = 1;
 			$current = file_get_contents($file);
 			$current = json_decode($current, TRUE);
-			$json_delete["tasks"]["$taskid"] = array("task" => $task['task'], "status" => "deleted", "duedate" => $task["duedate"], "dateadded" => $task["dateadded"], "priority" => $task["priority"]);
+			$json_delete["shots"]["$shotid"] = array("shot" => $shot['shot'], "status" => "deleted", "duedate" => $shot["duedate"], "dateadded" => $shot["dateadded"], "scene" => $shot["scene"], "frames" => $shot["frames"], "user" => $shot["user"], "task" => $shot["task"], "statuse" => $shot["statuse"], "priority" => $shot["priority"]);
 			$done = array_replace_recursive($current, $json_delete);
 			$done = json_encode($done);
 			if(file_put_contents($file, $done, LOCK_EX)) {
-				echo $LANG["taskdeleted"];
+				echo $LANG["shotdeleted"];
 				echo $LANG["redirected"];
 				redirect();
 			} else {
-				echo $LANG["etasknotdeleted"];
+				echo $LANG["eshotnotdeleted"];
 				echo $LANG["redirected"];
 				redirect();
 			}
 		}
 	}
 	if ($found==0) {
-		echo $LANG["etasknotdeleted"];
+		echo $LANG["eshotnotdeleted"];
 		echo $LANG["redirected"];
 		redirect();
 	}
@@ -209,3 +284,8 @@ if (empty($_GET['action'])) {
 }	
 
 ?>
+<p></p>	</div>
+	<div class="col-md-1"></div>
+</div>
+
+<?php include 'footer.php';?>
