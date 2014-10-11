@@ -1,11 +1,11 @@
 # Shotz
 
-Shotz is a simple php web-based shot/task list management for short movie productions. You can add/edit/delete shots and tasks to a simple flat file database. There are no current plans to develop this any further, development goes in a strict as-needed policy.
+Shotz is a simple php web-based shot/task list management for short movie productions. You can add/edit/delete shots and tasks to a simple flat file database (JSON text file). There are no current plans to develop this any further, development goes in a strict as-needed policy.
 
-You can easily create a shot, choose/edit the current task of the shot (for example, modeling or compositing), choose/edit the assigned user and choose/edit the status (for example, on going or rendering). You can close shots when they are finished or delete them. Shotz display the number and % of shots done and frames rendered.
+You can easily create a shot, choose/edit the current task of the shot (for example, modeling or compositing), choose/edit the assigned user and choose/edit the status (for example, on going or rendering). You can close shots when they are finished or delete them. Shotz displays the number and % of shots done and frames rendered.
 
 ## License
-Check license file
+Check license file - https://github.com/nafergo/shotz/blob/master/license.txt
 
 ## Description
 
@@ -13,8 +13,9 @@ Shotz is based on:
 * tasks.php by RaymiiOrg (Remy van Elst) https://github.com/RaymiiOrg/tasks.php
 * bootstrap framework https://github.com/twbs/bootstrap
 
-
+Main features:
 * add/edit/delete shots and tasks via webpage
+* bootstrap interface
 * assign shots/tasks to users with status
 * simple install, no database required (uses a json flatfile)
 * prioritize shots
