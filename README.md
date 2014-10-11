@@ -4,6 +4,8 @@ Shotz is a simple php web-based shot/task list management for short movie produc
 
 You can easily create a shot, choose/edit the current task of the shot (for example, modeling or compositing), choose/edit the assigned user and choose/edit the status (for example, on going or rendering). You can close shots when they are finished or delete them. Shotz displays the number and % of shots done and frames rendered.
 
+Shotz was developed by nelson gonçalves (nafergo) with the precious help of Ivan Terra.
+
 ## License
 Check license file - https://github.com/nafergo/shotz/blob/master/license.txt
 
