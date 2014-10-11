@@ -23,7 +23,7 @@
 
 
 # First open the JSON file
-$file = file_get_contents("task.json") or die("Cant open JSON file. Does it exist? Error code x51.");
+$file = file_get_contents("shot.json") or die("Cant open JSON file. Does it exist? Error code x51.");
 #now check if it is a valid file
 $json_debug = json_decode($file, true) or die("Cant decode JSON file. Is it a valid JSON file? Error code x61.");
 
