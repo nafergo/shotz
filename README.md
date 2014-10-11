@@ -16,8 +16,8 @@ Shotz is based on:
 Main features:
 * add/edit/delete shots and tasks via webpage
 * bootstrap interface
-* assign shots/tasks to users with status
-* simple install, no database required (uses a json flatfile)
+* assign users to shots/tasks
+* simple install, no database required (uses a JSON text file)
 * prioritize shots
 * due date on shots, time left/late shown.
 * trash bin for deleted shots
@@ -29,8 +29,7 @@ Main features:
  
 
 ## Installation
-1.  upload the files to your web server and visit index.php
-
+1.  unzip, upload the files to your web server and visit index.php
 
 ## Frequently Asked Questions
 
@@ -42,4 +41,4 @@ If you have any bugs to report or ideas, please create a new issue.
 
 
 ### Support
-If you have problems, we suggest you check folder/file permissions.
+If you have problems, we suggest you check folder/file permissions. Make sure that the webserver can write to the json file.
