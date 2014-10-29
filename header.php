@@ -89,10 +89,11 @@ $countpercentframes = round($countpercentframes); //
 <div class="row">
 	<div class="col-md-1"></div>
 	<div class="col-md-5">
-		<?php echo "<h2 class=\"pull-left\">".$LANG["moviename"]. " </h2>"; ?>
+		<?php echo "<h2 class=\"\">".$LANG["moviename"]. " </h2>"; ?>
 			
 	</div>
 	<div class="col-md-5">
+
 		<h3><i class="fa fa-film"></i> Shots finished <small><?php echo($countclosed); ?> of <?php echo($countopen + $countclosed); ?> <span class="pull-right">[ <?php echo($countopen); ?> to do ]</span></small></h3>
 		<div class="progress progress-striped">
   			<div class="progress-bar progress-bar-info" role="progressbar" 
@@ -105,8 +106,8 @@ $countpercentframes = round($countpercentframes); //
 		
 		
 
-<div class="row">
-		<h3><i class="fa fa-picture-o"></i> Frames rendered <small><?php echo($countframesclosed); ?> of <?php echo($countframesopen + $countframesclosed); ?></small></h3>
+
+		<h3><i class="fa fa-picture-o"></i> Frames rendered <small><?php echo($countframesclosed); ?> of <?php echo($countframesopen + $countframesclosed); ?> <span class="pull-right">[ <?php echo($countframesopen); ?> to render ]</span></small></h3>
 		<div class="progress progress-striped">
   			<div class="progress-bar progress-bar-info" role="progressbar" 
   			aria-valuenow="<? echo $countclosed; ?>" 
@@ -115,7 +116,7 @@ $countpercentframes = round($countpercentframes); //
     			<?php echo($countpercentframes); ?>%
   			</div>
 		</div>
-</div>
+
 
 
 
