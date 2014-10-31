@@ -76,8 +76,8 @@ $countpercentframes = round($countpercentframes); //
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<link rel="stylesheet" type="text/css" href="shotz.css" media="all" />         
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/shotz.css" media="all" />         
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 
 
@@ -86,13 +86,31 @@ $countpercentframes = round($countpercentframes); //
       
 </head>
 <body><a id="top-of-page"></a>
+
+
 <div class="row">
 	<div class="col-md-1"></div>
-	<div class="col-md-5">
+	<div class="col-md-7">
 		<?php echo "<h2 class=\"\">".$LANG["moviename"]. " </h2>"; ?>
 			
 	</div>
-	<div class="col-md-5">
+	<div class="col-md-3">
+<br>
+
+<!-- Button trigger modal -->
+<button class="pull-right btn btn-default btn-lg" data-toggle="modal" data-target="#TINDIOModal">
+<i class="fa fa-bar-chart"></i> Stats
+</button>
+
+<!-- Modal -->
+<div style="display: none;" class="modal fade" id="TINDIOModal" tabindex="-1" role="dialog" aria-labelledby="TINDIOModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="TINDIOModalLabel">Stats</h4>
+      </div>
+      <div class="modal-body">
 
 		<h3><i class="fa fa-film"></i> Shots finished <small><?php echo($countclosed); ?> of <?php echo($countopen + $countclosed); ?> <span class="pull-right">[ <?php echo($countopen); ?> to do ]</span></small></h3>
 		<div class="progress progress-striped">
@@ -118,15 +136,21 @@ $countpercentframes = round($countpercentframes); //
 		</div>
 
 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
+      </div>
+    </div>
+  </div>
+</div>
+  
 
 	</div>
 
 	<div class="col-md-1"></div>
 </div>
 
-<p></p>
-<br>
-<p></p>
-<br>
-<p></p>
+
+
+
