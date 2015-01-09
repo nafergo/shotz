@@ -173,16 +173,16 @@ function listshots($json_a,$shotstatus,$outputformat) {
 
                     switch ($shot["priority"]) {
                         case 1:
-                            echo "<i class=\"fa fa-square fa-lg\" style=\"color: #e74c3c;\"></i><font style=\"padding-left:5px;font-weight: bold;\">".$LANG["high"]."</font>";
+                            echo "<font style=\"padding-right:5px;padding-left:5px;color: white;background-color: #e74c3c;\">".$LANG["high"]."</font>";
                             break;
                         case 2:
-                            echo "<i class=\"fa fa-square fa-lg\" style=\"color: #3fc380;\"></i><font style=\"padding-left:5px;\">".$LANG["normal"]."</font>";
+                            echo "<font style=\"padding-right:5px;padding-left:5px;color: white;background-color: #3fc380;\">".$LANG["normal"]."</font>";
                             break;
                         case 3:
-                            echo "<i class=\"fa fa-square fa-lg\" style=\"color: #3498db;\"></i><font style=\"padding-left:5px;\">".$LANG["low"]."</font>";
+                            echo "<font style=\"padding-right:5px;padding-left:5px;color: white;background-color: #3498db;\">".$LANG["low"]."</font>";
                             break;
                         case 4:
-                            echo "<i class=\"fa fa-square fa-lg\" style=\"color: #95a5a6;\"></i><font style=\"padding-left:5px;\">".$LANG["onhold"]."</font>";
+                            echo "<font style=\"padding-right:5px;padding-left:5px;color: white;background-color: #95a5a6;\">".$LANG["onhold"]."</font>";
                             break;
                     }
 
