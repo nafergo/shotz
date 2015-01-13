@@ -2,11 +2,9 @@
 
 
 <div class="row">
-
-
-	<div class="col-md-1"></div>
-
-	<div class="col-md-10">
+	<div class="container-fluid">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		
 <?php
 /*
 #Copyright (c) 2012 Remy van Elst
@@ -285,7 +283,7 @@ echo $select;
 
 ?>
 <p></p>	</div>
-	<div class="col-md-1"></div>
+	</div>
 </div>
 
 <?php include 'footer.php';?>

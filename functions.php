@@ -38,7 +38,7 @@ error_reporting(0);
 function showinputform($actionpage) {
     global $LANG;
     $vandaag=date('m-d-Y');
-    echo "<table class=\"table-condensed\">";
+    echo "<table class=\"table\">";
     echo "<thead>";
     echo "<tr>";
     echo "<th>".$LANG["priority"]."</th>";
@@ -140,7 +140,7 @@ function listshots($json_a,$shotstatus,$outputformat) {
     
     array_sort_by_column($json_a, 'priority');
 
-        echo "<table id=\"sortedtable\" class=\"tablesorter table-condensed table-hover table-striped\">";
+        echo "<table id=\"sortedtable\" class=\"table tablesorter table-hover table-striped\">";
         echo "<thead>";
         echo "<tr>";
         echo "<th>".$LANG["priority"]."</th>";
@@ -173,16 +173,16 @@ function listshots($json_a,$shotstatus,$outputformat) {
 
                     switch ($shot["priority"]) {
                         case 1:
-                            echo "<font style=\"padding-right:5px;padding-left:5px;color: white;background-color: #e74c3c;\">".$LANG["high"]."</font>";
+                            echo "<font class =\"color-swatch\" style=\"color: white;background-color: #d9534f;\">".$LANG["high"]."</font>";
                             break;
                         case 2:
-                            echo "<font style=\"padding-right:5px;padding-left:5px;color: white;background-color: #3fc380;\">".$LANG["normal"]."</font>";
+                            echo "<font class =\"color-swatch\" style=\"color: white;background-color: #5cb85c;\">".$LANG["normal"]."</font>";
                             break;
                         case 3:
-                            echo "<font style=\"padding-right:5px;padding-left:5px;color: white;background-color: #3498db;\">".$LANG["low"]."</font>";
+                            echo "<font class =\"color-swatch\" style=\"color: white;background-color: #5bc0de;\">".$LANG["low"]."</font>";
                             break;
                         case 4:
-                            echo "<font style=\"padding-right:5px;padding-left:5px;color: white;background-color: #95a5a6;\">".$LANG["onhold"]."</font>";
+                            echo "<font class =\"color-swatch\" style=\"color: white;background-color: #999;\">".$LANG["onhold"]."</font>";
                             break;
                     }
 
@@ -255,13 +255,13 @@ $select = '<select class="form-control select_statuse" name="statuse" id="'.$ite
                                 
 
                                 if ($daysclosed < 0) {
-                                    $daysclosed = "<u>" .abs($daysclosed) . $LANG["dayslate"] . " (".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")</u>";
+                                    $daysclosed = "<u>" .abs($daysclosed) . $LANG["dayslate"] . " <br>(".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")</u>";
                                 } elseif ($daysclosed == 0) {
-                                    $daysclosed = "<b>".$LANG["today"]." (".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")</b>";
+                                    $daysclosed = "<b>".$LANG["today"]." <br>(".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")</b>";
 
 
                                 } else {
-                                        $daysclosed = $daysclosed . $LANG["daysleft"] ." (".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")";
+                                        $daysclosed = $daysclosed . $LANG["daysleft"] ." <br>(".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")";
                                 }
                             }                            
 

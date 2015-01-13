@@ -78,8 +78,9 @@ $countpercentframes = round($countpercentframes); //
 
 <link rel="stylesheet" type="text/css" href="css/shotz.css" media="all" />         
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
-
+ <link rel="icon" href="favicon.ico" type="image/ico" sizes="64x64"> 
 
 
 
@@ -89,12 +90,13 @@ $countpercentframes = round($countpercentframes); //
 
 
 <div class="row">
-	<div class="col-md-1"></div>
-	<div class="col-md-7">
+<div class="container-fluid">
+	
+	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<?php echo "<h2 class=\"\">".$LANG["moviename"]. " </h2>"; ?>
 			
 	</div>
-	<div class="col-md-3">
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 <br>
 
 <!-- Button trigger modal -->
@@ -147,8 +149,8 @@ $countpercentframes = round($countpercentframes); //
   
 
 	</div>
+</div>
 
-	<div class="col-md-1"></div>
 </div>
 
 

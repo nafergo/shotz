@@ -1,13 +1,20 @@
 <?php include 'header.php';?>
 
-
+<div class="row">
+	<div class="container-fluid">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<hr>
+		</div>
+	</div>
+</div>
 
 <div class="row">
+<div class="container-fluid">
 
 
-	<div class="col-md-1"></div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-	<div class="col-md-10">
+
 
 
 <?php
@@ -265,9 +272,9 @@ echo "</div>";
 ?>
 
 	</div>
-	<div class="col-md-1"></div>
-</div>
 
+</div>
+</div>
 <?php include 'footer.php';?>
 
 

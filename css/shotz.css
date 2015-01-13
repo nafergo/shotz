@@ -43,6 +43,13 @@ body{
 margin:0;
 padding:0;
 color:#000;
+font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 1.5em;
 }
 
 .row {
@@ -53,3 +60,10 @@ color:#000;
 .well-sm {
 	background-color: #ECECEC;
 	}
+	
+.color-swatch {
+padding: 5px 5px 5px 5px;
+border-radius: 3px;
+p
+}	
+	
