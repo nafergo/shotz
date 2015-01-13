@@ -60,8 +60,8 @@ $LANG = array(
     "updateshot" => "Update shot",
     "noshots" => "No shots.",
     "todo" => "To do",
-    "daysleft" => "d left",
-    "dayslate" => "d late",
+    "daysleft" => " days left",
+    "dayslate" => " days late",
     "today" => "Today!",
     "infotext" => 'Shotz is a modified version (by nafergo / animaXion studioz) of the <a href="https://github.com/RaymiiOrg/tasks.php" target="_blank">tasks.php</a> script written by Remy van Elst.',
     "info" => "Info",
@@ -69,7 +69,7 @@ $LANG = array(
     "statuse" => "Status",
     "users" => "User",
     "task" => "Task",
-    "" => "",
+    "actions" => "Actions",
     "" => ""
 
     );

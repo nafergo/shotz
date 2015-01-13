@@ -150,10 +150,10 @@ function listshots($json_a,$shotstatus,$outputformat) {
        echo "<th>".$LANG["user"]."</th>";   
         echo "<th>".$LANG["task"]."</th>";
         echo "<th>".$LANG["statuse"]."</th>";
-        echo "<th>".$LANG["daysopen"]."</th>";
+        echo "<th class=\"center_me\">".$LANG["daysopen"]."</th>";
         echo "<th>".$LANG["duedate"]."</th>";
 
-        echo "<th> </th>";
+        echo "<th></th>";
         echo "</tr>";
         echo "</thead>";
                     echo "<tbody>";     
@@ -186,7 +186,7 @@ function listshots($json_a,$shotstatus,$outputformat) {
                             break;
                     }
 
-                    echo "<p></p></td>";
+                    echo "</td>";
                     $dayopen = NULL;
                                     #shot
                     echo "<td>".$shot['scene']."</td>";
@@ -236,7 +236,7 @@ $select = '<select class="form-control select_statuse" name="statuse" id="'.$ite
 
                 echo "<th>".$select."</th>";              
 
-                    echo "<td>".$dayopen."</td>";
+                    echo "<td class=\"center_me\">".$dayopen."</td>";
 
                     #due date
                     echo "<td>";
@@ -255,13 +255,13 @@ $select = '<select class="form-control select_statuse" name="statuse" id="'.$ite
                                 
 
                                 if ($daysclosed < 0) {
-                                    $daysclosed = "<u>" .abs($daysclosed) . $LANG["dayslate"] . " <br>(".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")</u>";
+                                    $daysclosed = "<font class=\"text-danger\">" .abs($daysclosed) . $LANG["dayslate"] . " <br>(".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")</font>";
                                 } elseif ($daysclosed == 0) {
-                                    $daysclosed = "<b>".$LANG["today"]." <br>(".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")</b>";
+                                    $daysclosed = "<font class=\"text-warning\">".$LANG["today"]." <br>(".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")</font>";
 
 
                                 } else {
-                                        $daysclosed = $daysclosed . $LANG["daysleft"] ." <br>(".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")";
+                                        $daysclosed = "<font class=\"text-success\">" . $daysclosed . $LANG["daysleft"] ." <br>(".date('D d M',strtotime(str_replace('-', '/',$shotduedate))).")</font>";
                                 }
                             }                            
 
@@ -279,25 +279,25 @@ $select = '<select class="form-control select_statuse" name="statuse" id="'.$ite
 
                     echo "</td>";
                                     #action:
-                    echo "<td class=\"center_me\">";
+                    echo "<td class=\"\"> <ul class=\"pull-right list-inline\">";
 
                     switch ($shotstatus) {
                         case 'open':
                                             #done
-                        echo "<a href=\"action.php?id=" .$item. "&action=done\" class=\"pull-left\" rel=\"tooltip\" data-placement=\"top\" alt=\"Shot done!\" title=\"Shot done!\"><i class=\"fa-lg fa fa-check-square-o\"></i></a>";
+                        echo "<li><a href=\"action.php?id=" .$item. "&action=done\" rel=\"tooltip\" data-placement=\"top\" alt=\"Shot done!\" title=\"Shot done!\"><i class=\"fa-lg fa fa-check-square-o\"></i></a></li>";
                                             #edit
                         echo "  ";
-                        echo "<a href=\"action.php?id=" .$item. "&action=edit\" rel=\"tooltip\" data-placement=\"top\" alt=\"Edit\" title=\"Edit\"><i class=\"fa-lg fa fa-pencil-square-o\"></i></a>";
+                        echo "<li><a href=\"action.php?id=" .$item. "&action=edit\" rel=\"tooltip\" data-placement=\"top\" alt=\"Edit\" title=\"Edit\"><i class=\"fa-lg fa fa-pencil-square-o\"></i></a></li>";
                                             #delete
                         echo "  ";
-                        echo "<a href=\"action.php?id=" . $item . "&action=delete\" class=\"pull-right\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a>";
+                        echo "<li><a href=\"action.php?id=" . $item . "&action=delete\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a></li>";
                         break;
 
                         case 'closed':
-                        echo "  <a href=\"action.php?id=" .$item. "&action=delete\" class=\"pull-right\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a>";
+                        echo "<li><a href=\"action.php?id=" .$item. "&action=delete\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a></li>";
                         break;
                     }                                        
-                    echo "</td>";
+                    echo "</ul></td>";
                     echo "</tr>";
                  
                 $shotnumber+=1;

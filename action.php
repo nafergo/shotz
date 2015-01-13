@@ -42,7 +42,7 @@ if (empty($_GET['action'])) {
 		if ($item == $shotid) {
 		$found = 1;
 
-    echo "<table class=\"table-condensed\">";
+    echo "<table class=\"table\">";
     echo "<tr>";
     echo "<th>".$LANG["priority"]."</th>";
     echo "<th>".$LANG["scene"]."</th>";

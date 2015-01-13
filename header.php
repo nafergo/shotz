@@ -100,17 +100,17 @@ $countpercentframes = round($countpercentframes); //
 <br>
 
 <!-- Button trigger modal -->
-<button class="pull-right btn btn-default btn-lg" data-toggle="modal" data-target="#TINDIOModal">
+<button class="pull-right btn btn-default btn-lg" data-toggle="modal" data-target="#StatsModal">
 <i class="fa fa-bar-chart"></i> Stats
 </button>
 
 <!-- Modal -->
-<div style="display: none;" class="modal fade" id="TINDIOModal" tabindex="-1" role="dialog" aria-labelledby="TINDIOModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div style="display: none;" class="modal fade" id="StatsModal" tabindex="-1" role="dialog" aria-labelledby="StatsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title" id="TINDIOModalLabel">Stats</h4>
+        <h2 class="modal-title" id="StatsModalLabel">Stats</h2>
       </div>
       <div class="modal-body">
 
