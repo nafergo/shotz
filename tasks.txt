@@ -1,8 +1,0 @@
-modeling<br />
-rigging<br />
-shading<br />
-layout<br />
-animation<br />
-vfx<br />
-lighting<br />
-compositing
