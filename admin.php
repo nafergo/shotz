@@ -23,7 +23,8 @@ $link = file_get_contents('storage/shot.json');
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<link rel="stylesheet" type="text/css" href="css/shotz.css" media="all" />         
+<link rel="stylesheet" type="text/css" href="css/shotz.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/colors.css" media="all" />                  
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
@@ -242,10 +243,64 @@ if (file_exists($statusmyfile)) {
 </div>
 
 			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-				<button type="button" disabled="disabled" class="center-block btn btn-default btn-lg" data-toggle="modal" data-target="#">
+
+				<button type="button" class="center-block btn btn-default btn-lg" data-toggle="modal" data-target="#colorseModal">
 				<i class="fa fa-tint fa-4x"></i>
 				<h2><?php echo "".$LANG["colorsadmin"]."";?></h2>
 				</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="colorseModal" tabindex="-1" role="dialog" aria-labelledby="colorseModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title" id="colorseModalLabel">EDIT <?php echo "".$LANG["colorsadmin"]."";?></h3>
+        <h5><small><i class="fa fa-info-circle"></i> You can use this window to directly edit the css.</small></h5>
+      </div>
+      <div class="modal-body">
+
+<?php
+
+$colorsmyfile = "css/colors.css";
+if (isset($_POST['colorsta'])) {
+    $colorsnewData = htmlspecialchars($_POST['colorsta']);
+    $colorshandle = fopen($colorsmyfile, "w");
+    fwrite($colorshandle, $colorsnewData);
+    fclose($colorshandle);
+}
+// ------------------------------------------------
+if (file_exists($colorsmyfile)) {
+
+    $colorsmyData = file_get_contents($colorsmyfile);
+}
+?>
+
+
+<form action="admin.php" method="post">
+<textarea class="form-control" name="colorsta" id="colorstextareaediting" rows="10">
+<?php echo str_replace("<br />","",$colorsmyData); ?>
+</textarea>
+
+
+      </div>
+      <div class="modal-footer">
+      
+     		<button type="submit" name="statusBtn" class="btn btn-primary">Submit</button>
+     		</form>
+                		
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 			</div>
 
 
