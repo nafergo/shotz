@@ -1,0 +1,147 @@
+/*---------------------------------
+If you want, you can directly edit the css.
+You have the original values in each line and at the end of this css.
+There's also a backup css. If you delete a css property here, the value will load from another css :)  
+-----------------------------------*/
+
+
+/*---------------------------------
+	NAVBAR
+-----------------------------------*/
+
+/* NAVBAR BOX */
+.navbar {
+	background-color: #673AB7;	/* original value is background-color: #673AB7; */
+	border-radius: 0em;	/* original value is border-radius: 0em; */
+	border-color: #673AB7;	/* original value is border-color: #673AB7; */
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);	/* original value is box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75); */
+	}
+
+/* NAVBAR LINK COLOR */
+.navbar-default .navbar-nav > li > a {
+    color: #FFF;	/* original value is color:#FFF; */
+    }
+
+/* NAVBAR ACTIVE PAGE LINK */
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #FFF;	/* original value is color:#FFF; */
+    background-color: #7C4DFF;	/* original value is background-color: #7C4DFF; */
+}
+
+/* NAVBAR LINK HOVER */
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #FFF;	/* original value is color:#FFF; */
+    background-color: #7C4DFF;	/* original value is background-color: #7C4DFF; */
+}
+
+/* NAVBAR BRAND TEXT */
+.navbar-default .navbar-brand {
+    color: #FFF; /* original value is color:#FFF; */
+    text-transform: uppercase;	/* original value is text-transform: uppercase; */
+    }
+
+/* NAVBAR BRAND TEXT HOVER */
+a.navbar-brand:hover {
+    color: #FFF;	/* original value is color:#FFF; */
+    }
+
+
+/*---------------------------------
+	GENERAL
+-----------------------------------*/
+
+/* BODY TEXT COLOR */
+body {
+	color:#000;	/* original value is color:#000; */
+	}
+
+/* BODY HEADING LEVEL 1 */
+h1 {
+	text-transform: uppercase;	/* original value is text-transform: uppercase; */
+	font-weight: 300;	/* original value is font-weight: 300; */
+	font-size: 2em;	/* original value is font-size: 2em; */
+	color:#000;	/* original value is color:#000; */
+	}
+
+/* BODY HEADING LEVEL 2 */
+h2 {
+	text-transform: uppercase;	/* original value is text-transform: uppercase; */
+	font-weight: 300;	/* original value is font-weight: 300; */
+	font-size: 1.5em;	/* original value is font-size: 1.5em; */
+	color:#000;	/* original value is color:#000; */
+	}
+
+/* TABLE HEADING COLOR */
+th {
+	color:#000;	/* original value is color:#000; */
+	}
+
+/* TABLE CONTENT COLOR */	
+td {
+	color:#000;	/* original value is color:#000; */
+	}	
+	
+	
+	
+/*---------------------------------
+	ORIGINAL CSS VALUES
+-----------------------------------	
+
+.navbar {
+	background-color: #673AB7;
+	border-radius: 0em;
+	border-color: #673AB7;
+	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+	}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FFF;
+    }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #FFF;
+    background-color: #7C4DFF;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #FFF;
+    background-color: #7C4DFF;
+}
+
+.navbar-default .navbar-brand {
+    color: #FFF;
+    text-transform: uppercase;
+    }
+
+a.navbar-brand:hover {
+    color: #FFF;
+    }
+
+body {
+	color:#000;
+	}
+
+h1 {
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 2em;
+	color:#000;
+	}
+
+h2 {
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 1.5em;
+	color:#000;
+	}
+
+th {
+	color:#000;
+	}
+
+td {
+	color:#000;
+	}		
+	
+	
+	 */
