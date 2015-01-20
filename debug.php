@@ -20,8 +20,6 @@
 // THE SOFTWARE.
 
 
-
-
 # First open the JSON file
 $file = file_get_contents("shot.json") or die("Cant open JSON file. Does it exist? Error code x51.");
 #now check if it is a valid file
