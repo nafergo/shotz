@@ -1,19 +1,16 @@
 <?php
-
-
-
 include("functions.php");
 
 $link = file_get_contents('storage/shot.json');
-
-
 
 ?>
 <!DOCTYPE html>
 <html><head>
 <title><?php echo "".$LANG["softwarename"]. " ".$LANG["softwareversion"]."";?></title>
 <meta charset="UTF-8">
-<meta name="description" content="" />
+<meta name="description" content="Web platform for short movie production tracking">
+<meta name="keywords" content="production, management, task, shot, animation, film, movie">
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -124,6 +121,7 @@ if (empty($_GET['action'])) {
 
 $users = file('storage/users.txt');
 $options = '';
+ $options .= '<option value="'.$shot["user"].'">'.html_entity_decode($shot["user"]).'</option>';
 foreach ($users as $user) {
     $options .= '<option value="'.$user.'">'.$user.'</option>';
 }
@@ -137,6 +135,7 @@ echo $select;
 
 $tasks = file('storage/tasks.txt');
 $options = '';
+$options .= '<option value="'.$shot["task"].'">'.html_entity_decode($shot["task"]).'</option>';
 foreach ($tasks as $task) {
     $options .= '<option value="'.$task.'">'.$task.'</option>';
 }
@@ -149,6 +148,7 @@ echo $select;
 
 $statuses = file('storage/statuses.txt');
 $options = '';
+$options .= '<option value="'.$shot["statuse"].'">'.html_entity_decode($shot["statuse"]).'</option>';
 foreach ($statuses as $statuse) {
     $options .= '<option value="'.$statuse.'">'.$statuse.'</option>';
 }
