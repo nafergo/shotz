@@ -27,7 +27,9 @@ font-family: 'Open Sans', sans-serif;
 	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #FFF;
+}
 
 .navbar-default .navbar-brand {
     color: #FFF;
@@ -99,4 +101,15 @@ text-align: center;
 td.duedate {
 	max-width: 150px;
 }
+
+.select_dropdown {
+	background-color: red;
+	color: red;
+	
+	}
+
+.center_me {
+	text-align: center;
+}	
+	
 	
