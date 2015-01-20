@@ -24,7 +24,8 @@ $link = file_get_contents('storage/shot.json');
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<link rel="stylesheet" type="text/css" href="css/shotz.css" media="all" />         
+<link rel="stylesheet" type="text/css" href="css/shotz.css" media="all" />   
+<link rel="stylesheet" type="text/css" href="css/colors.css" media="all" />                        
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 
