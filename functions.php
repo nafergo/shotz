@@ -1,4 +1,8 @@
 <?php
+header('Content-Type: text/html; charset=utf-8');
+?>
+
+<?php
 /*
 #Copyright (c) 2012 Remy van Elst
 #Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -204,37 +208,37 @@ function listshots($json_a,$shotstatus,$outputformat) {
                     
  $users = file('storage/users.txt');
 $options = '';
- $options .= '<option value="'.$shot["user"].'">'.utf8_encode(html_entity_decode($shot["user"])).'</option>';
+ $options .= '<option value="'.$shot["user"].'">'.html_entity_decode($shot["user"]).'</option>';
 foreach ($users as $user) {
        
     $options .= '<option value="'.$user.'">'.$user.'</option>';
 }
 $select = '<select class="form-control select_user" name="user" id="'.$item.'">'.$options.'</select>';
 
-echo "<th>".$select."</th>";
+echo "<td style=\"background-color: #b2dfdb;\">".$select."</td>";
 
 
  $tasks = file('storage/tasks.txt');
 $options = '';
-$options .= '<option value="'.$shot["task"].'">'.utf8_encode(html_entity_decode($shot["task"])).'</option>';
+$options .= '<option value="'.$shot["task"].'">'.html_entity_decode($shot["task"]).'</option>';
 foreach ($tasks as $task) {
     $options .= '<option value="'.$task.'">'.$task.'</option>';
 }
 $select = '<select class="form-control select_task" name="task" id="'.$item.'">'.$options.'</select>';
 
-              echo "<th>".$select."</th>";
+              echo "<td style=\"background-color: #ffe0b2;\">".$select."</td>";
 
 
 
    $statuses = file('storage/statuses.txt');
 $options = '';
-$options .= '<option value="'.$shot["statuse"].'">'.utf8_encode(html_entity_decode($shot["statuse"])).'</option>';
+$options .= '<option value="'.$shot["statuse"].'">'.html_entity_decode($shot["statuse"]).'</option>';
 foreach ($statuses as $statuse) {
     $options .= '<option value="'.$statuse.'">'.$statuse.'</option>';
 }
 $select = '<select class="form-control select_statuse" name="statuse" id="'.$item.'">'.$options.'</select>';
 
-                echo "<th>".$select."</th>";              
+                echo "<td style=\"background-color: #d1c4e9;\">".$select."</td>";              
 
                     echo "<td class=\"center_me\">".$dayopen."</td>";
 
