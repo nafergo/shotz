@@ -1,7 +1,7 @@
 /*---------------------------------
-If you want, you can directly edit the css.
-You have the original values in each line and at the end of this css.
-There's also a backup css. If you delete a css property here, the value will load from another css :)  
+If you want, you can directly edit the colors in the css.
+If needed, you have the original values at the end of this css.
+There's also a backup css. If you delete a css color declaration here, the original value will load from another css :)  
 -----------------------------------*/
 
 
@@ -11,38 +11,36 @@ There's also a backup css. If you delete a css property here, the value will loa
 
 /* NAVBAR BOX */
 .navbar {
-	background-color: #673AB7;	/* original value is background-color: #673AB7; */
-	border-radius: 0em;	/* original value is border-radius: 0em; */
-	border-color: #673AB7;	/* original value is border-color: #673AB7; */
-	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);	/* original value is box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75); */
+	background-color: ;
+	border-color: ;
+	box-shadow: ;	
 	}
 
 /* NAVBAR LINK COLOR */
 .navbar-default .navbar-nav > li > a {
-    color: #FFF;	/* original value is color:#FFF; */
+    color: ;	
     }
 
 /* NAVBAR ACTIVE PAGE LINK */
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #FFF;	/* original value is color:#FFF; */
-    background-color: #7C4DFF;	/* original value is background-color: #7C4DFF; */
-}
+    color: ;	
+    background-color: ;
+    }
 
 /* NAVBAR LINK HOVER */
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #FFF;	/* original value is color:#FFF; */
-    background-color: #7C4DFF;	/* original value is background-color: #7C4DFF; */
-}
+    color: ;	
+    background-color: ;
+    }
 
 /* NAVBAR BRAND TEXT */
 .navbar-default .navbar-brand {
-    color: #FFF; /* original value is color:#FFF; */
-    text-transform: uppercase;	/* original value is text-transform: uppercase; */
+    color: ; 
     }
 
 /* NAVBAR BRAND TEXT HOVER */
 a.navbar-brand:hover {
-    color: #FFF;	/* original value is color:#FFF; */
+    color: ;	
     }
 
 
@@ -50,37 +48,159 @@ a.navbar-brand:hover {
 	GENERAL
 -----------------------------------*/
 
-/* BODY TEXT COLOR */
+/* BODY TEXT and BACKGROUND COLOR */
 body {
-	color:#000;	/* original value is color:#000; */
+	color: ;	
+	background-color: ;
 	}
 
 /* BODY HEADING LEVEL 1 */
 h1 {
-	text-transform: uppercase;	/* original value is text-transform: uppercase; */
-	font-weight: 300;	/* original value is font-weight: 300; */
-	font-size: 2em;	/* original value is font-size: 2em; */
-	color:#000;	/* original value is color:#000; */
+	color: ;	
 	}
 
 /* BODY HEADING LEVEL 2 */
 h2 {
-	text-transform: uppercase;	/* original value is text-transform: uppercase; */
-	font-weight: 300;	/* original value is font-weight: 300; */
-	font-size: 1.5em;	/* original value is font-size: 1.5em; */
-	color:#000;	/* original value is color:#000; */
+	color: ;	
 	}
 
-/* TABLE HEADING COLOR */
+
+/*---------------------------------
+	TABLES
+-----------------------------------*/
+
+/* TABLE HEADING TEXT COLOR */
 th {
-	color:#000;	/* original value is color:#000; */
+	color: ;	
 	}
 
-/* TABLE CONTENT COLOR */	
+/* TABLE CONTENT TEXT COLOR */	
 td {
-	color:#000;	/* original value is color:#000; */
+	color: ;	
 	}	
-	
+
+/* ARTIST COLUMN COLOR */	
+td.artist_column {
+	background-color: ;	
+	}	
+
+.table-striped > tbody > tr:nth-child(2n+1) > td.artist_column {
+	background-color: ;
+	}
+
+
+/* TASK COLUMN COLOR */	
+td.task_column {
+	background-color: ;	
+	}	
+
+.table-striped > tbody > tr:nth-child(2n+1) > td.task_column {
+	background-color: ;
+	}
+/* STATUS COLUMN COLOR */	
+td.status_column {
+	background-color: ;	
+	}	
+
+.table-striped > tbody > tr:nth-child(2n+1) > td.status_column {
+	background-color: ;
+	}	
+
+/*---------------------------------
+	PRIORITY INFO
+-----------------------------------*/
+
+.high_priority {
+	color: ;
+	background-color: ;
+	}
+
+.normal_priority {
+	color: ;
+	background-color: ;
+	}
+
+.low_priority {
+	color: ;
+	background-color: ;
+	}
+
+.onhold_priority {
+	color: ;
+	background-color: ;
+	}
+
+
+/*---------------------------------
+	ADMIN PAGE
+-----------------------------------*/
+
+/* button color */
+.artistsadmin {
+	background-color: ;
+	color: ;
+	}
+
+/* button when hover color */
+.artistsadmin:hover {
+	background-color: ;
+	color: ;
+	}
+
+.artistsadmin h2 {
+	color: ;
+	}
+
+/* button color */
+.tasksadmin {
+	background-color: ;
+	color: ;
+	}
+
+/* button when hover color */
+.tasksadmin:hover {
+	background-color: ;
+	color: ;
+	}
+
+/* button text color */
+.tasksadmin h2 {
+	color: ;
+	}
+
+/* button color */
+.statusesadmin {
+	background-color: ;
+	color: ;
+	}
+
+/* button when hover color */
+.statusesadmin:hover {
+	background-color: ;
+	color: ;
+	}
+
+/* button text color */
+.statusesadmin h2 {
+	color: ;
+	}
+
+/* button color */
+.colorsadmin {
+	background-color: ;
+	color: ;
+	}
+
+/* button when hover color */
+.colorsadmin:hover {
+	background-color: ;
+	color: ;
+	}
+
+/* button text color */
+.colorsadmin h2 {
+	color: ;
+	}	
 	
 	
 /*---------------------------------
@@ -101,12 +221,12 @@ td {
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #FFF;
     background-color: #7C4DFF;
-}
+    }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #FFF;
     background-color: #7C4DFF;
-}
+    }
 
 .navbar-default .navbar-brand {
     color: #FFF;
@@ -142,6 +262,105 @@ th {
 td {
 	color:#000;
 	}		
-	
+
+td.artist_column {
+	background-color: #b2dfdb;	
+	}	
+
+.table-striped > tbody > tr:nth-child(2n+1) > td.artist_column {
+	background-color: #b2dfdb;
+	}
+
+td.task_column {
+	background-color: #ffe0b2;	
+	}	
+
+.table-striped > tbody > tr:nth-child(2n+1) > td.task_column {
+	background-color: #ffe0b2;
+	}
+
+td.status_column {
+	background-color: #d1c4e9;	
+	}	
+
+.table-striped > tbody > tr:nth-child(2n+1) > td.status_column {
+	background-color: #d1c4e9;
+	}	
+
+.high_priority {
+	color: white;
+	background-color: #d9534f;
+	}
+
+.normal_priority {
+	color: white;
+	background-color: #5cb85c;
+	}
+
+.low_priority {
+	color: white;
+	background-color: #5bc0de;
+	}
+
+.onhold_priority {
+	color: white;
+	background-color: #999;
+	}
+
+.artistsadmin {
+	background-color: ;
+	color: ;
+	}
+
+.artistsadmin:hover {
+	background-color: ;
+	color: ;
+	}
+
+.artistsadmin h2 {
+	color: ;
+	}
+
+.tasksadmin {
+	background-color: ;
+	color: ;
+	}
+
+.tasksadmin:hover {
+	background-color: ;
+	color: ;
+	}
+
+.tasksadmin h2 {
+	color: ;
+	}
+
+.statusesadmin {
+	background-color: ;
+	color: ;
+	}
+
+.statusesadmin:hover {
+	background-color: ;
+	color: ;
+	}
+
+.statusesadmin h2 {
+	color: ;
+	}
+
+.colorsadmin {
+	background-color: ;
+	color: ;
+	}
+
+.colorsadmin:hover {
+	background-color: ;
+	color: ;
+	}
+
+.colorsadmin h2 {
+	color: ;
+	}		
 	
 	 */
