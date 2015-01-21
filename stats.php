@@ -108,7 +108,8 @@ $countpercentframes = round($countpercentframes); //
 		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
 
     <h2>Total Progress</h2>
-		<h3><i class="fa fa-film"></i> Shots finished <small><?php echo($countclosed); ?> of <?php echo($countopen + $countclosed); ?> <span class="pull-right">[ <?php echo($countopen); ?> to do ]</span></small></h3>
+		<h3><i class="fa fa-film"></i> Shots finished</h3>
+		<small><?php echo($countclosed); ?> finished of a total of <?php echo($countopen + $countclosed); ?> <span class="pull-right">[ <?php echo($countopen); ?> to do ]</span></small>
 		<div class="progress progress-striped">
   			<div class="progress-bar progress-bar-info" role="progressbar" 
   			aria-valuenow="<? echo $countclosed; ?>" 
@@ -127,7 +128,8 @@ $countpercentframes = round($countpercentframes); //
 		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
 
 
-		<h3><i class="fa fa-picture-o"></i> Frames rendered <small><?php echo($countframesclosed); ?> of <?php echo($countframesopen + $countframesclosed); ?> <span class="pull-right">[ <?php echo($countframesopen); ?> to render ]</span></small></h3>
+		<h3><i class="fa fa-picture-o"></i> Frames rendered</h3>
+		<small><?php echo($countframesclosed); ?> rendered of a total of <?php echo($countframesopen + $countframesclosed); ?> <span class="pull-right">[ <?php echo($countframesopen); ?> to render ]</span></small>
 		<div class="progress progress-striped">
   			<div class="progress-bar progress-bar-info" role="progressbar" 
   			aria-valuenow="<? echo $countclosed; ?>" 

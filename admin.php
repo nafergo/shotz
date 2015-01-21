@@ -72,7 +72,7 @@ $link = file_get_contents('storage/shot.json');
 	</div>
 	<div class="row">
 		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-			<button type="button" class="center-block btn btn-default btn-lg" data-toggle="modal" data-target="#usersModal">
+			<button type="button" class="center-block btn btn-default btn-lg artistsadmin" data-toggle="modal" data-target="#usersModal">
 				<i class="fa fa-users fa-4x"></i>
 				<h2><?php echo "".$LANG["usersadmin"]."";?></h2>
 			</button>
@@ -128,7 +128,7 @@ if (file_exists($usersmyfile)) {
 
 		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
 		
-			<button type="button" class="center-block btn btn-default btn-lg" data-toggle="modal" data-target="#taskModal">
+			<button type="button" class="center-block btn btn-default btn-lg tasksadmin" data-toggle="modal" data-target="#taskModal">
 				<i class="fa fa-wrench fa-4x"></i>
 				<h2><?php echo "".$LANG["tasksadmin"]."";?></h2>
 			</button>
@@ -183,7 +183,7 @@ if (file_exists($taskmyfile)) {
 
 	</div>
 			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-				<button type="button" class="center-block btn btn-default btn-lg" data-toggle="modal" data-target="#statuseModal">
+				<button type="button" class="center-block btn btn-default btn-lg statusesadmin" data-toggle="modal" data-target="#statuseModal">
 				<i class="fa fa-cogs fa-4x"></i>
 				<h2><?php echo "".$LANG["statusesadmin"]."";?></h2>
 				</button>
@@ -244,7 +244,7 @@ if (file_exists($statusmyfile)) {
 
 			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
 
-				<button type="button" class="center-block btn btn-default btn-lg" data-toggle="modal" data-target="#colorseModal">
+				<button type="button" class="center-block btn btn-default btn-lg colorsadmin" data-toggle="modal" data-target="#colorseModal">
 				<i class="fa fa-tint fa-4x"></i>
 				<h2><?php echo "".$LANG["colorsadmin"]."";?></h2>
 				</button>

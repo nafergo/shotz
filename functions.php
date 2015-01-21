@@ -177,16 +177,16 @@ function listshots($json_a,$shotstatus,$outputformat) {
 
                     switch ($shot["priority"]) {
                         case 1:
-                            echo "<div class =\"color-swatch\" style=\"color: white;background-color: #d9534f;\">".$LANG["high"]."</div>";
+                            echo "<div class =\"high_priority\">".$LANG["high"]."</div>";
                             break;
                         case 2:
-                            echo "<div class =\"color-swatch\" style=\"color: white;background-color: #5cb85c;\">".$LANG["normal"]."</div>";
+                            echo "<div class =\"normal_priority\">".$LANG["normal"]."</div>";
                             break;
                         case 3:
-                            echo "<div class =\"color-swatch\" style=\"color: white;background-color: #5bc0de;\">".$LANG["low"]."</div>";
+                            echo "<div class =\"low_priority\">".$LANG["low"]."</div>";
                             break;
                         case 4:
-                            echo "<div class =\"color-swatch\" style=\"color: white;background-color: #999;\">".$LANG["onhold"]."</div>";
+                            echo "<div class =\"onhold_priority\">".$LANG["onhold"]."</div>";
                             break;
                     }
 
@@ -215,7 +215,7 @@ foreach ($users as $user) {
 }
 $select = '<select class="form-control select_user" name="user" id="'.$item.'">'.$options.'</select>';
 
-echo "<td style=\"background-color: #b2dfdb;\">".$select."</td>";
+echo "<td class=\"artist_column\">".$select."</td>";
 
 
  $tasks = file('storage/tasks.txt');
@@ -226,7 +226,7 @@ foreach ($tasks as $task) {
 }
 $select = '<select class="form-control select_task" name="task" id="'.$item.'">'.$options.'</select>';
 
-              echo "<td style=\"background-color: #ffe0b2;\">".$select."</td>";
+              echo "<td class=\"task_column\">".$select."</td>";
 
 
 
@@ -238,7 +238,7 @@ foreach ($statuses as $statuse) {
 }
 $select = '<select class="form-control select_statuse" name="statuse" id="'.$item.'">'.$options.'</select>';
 
-                echo "<td style=\"background-color: #d1c4e9;\">".$select."</td>";              
+                echo "<td class=\"status_column\">".$select."</td>";              
 
                     echo "<td class=\"center_me\">".$dayopen."</td>";
 
