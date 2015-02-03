@@ -122,32 +122,32 @@ td {
 	}		
 
 td.artist_column {
-	background-color: #b2dfdb;	
+	background-color: #536dfe;	
 	}	
 
 .table-striped > tbody > tr:nth-child(2n+1) > td.artist_column {
-	background-color: #b2dfdb;
+	background-color: #3f51b5;
 	}
 
 td.task_column {
-	background-color: #ffe0b2;	
+	background-color: #ffab40;	
 	}	
 
 .table-striped > tbody > tr:nth-child(2n+1) > td.task_column {
-	background-color: #ffe0b2;
+	background-color: #ff9800;
 	}
 
 td.status_column {
-	background-color: #d1c4e9;	
+	background-color: #eeff41;	
 	}	
 
 .table-striped > tbody > tr:nth-child(2n+1) > td.status_column {
-	background-color: #d1c4e9;
+	background-color: #cddc39;
 	}	
 
 .high_priority {
 	color: white;
-	background-color: #d9534f;
+	background-color: #f44336;
 	border-radius: 3px;
 	width: 100px;
 	height: 100%;
@@ -157,7 +157,7 @@ td.status_column {
 
 .normal_priority {
 	color: white;
-	background-color: #5cb85c;
+	background-color: #4caf50;
 	border-radius: 3px;
 	width: 100px;
 	height: 100%;
@@ -168,7 +168,7 @@ td.status_column {
 
 .low_priority {
 	color: white;
-	background-color: #5bc0de;
+	background-color: #795548;
 	border-radius: 3px;
 	width: 100px;
 	height: 100%;
@@ -178,7 +178,7 @@ td.status_column {
 
 .onhold_priority {
 	color: white;
-	background-color: #999;
+	background-color: #607d8b;
 	border-radius: 3px;
 	width: 100px;
 	height: 100%;
