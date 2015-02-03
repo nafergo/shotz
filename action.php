@@ -99,14 +99,18 @@ if (empty($_GET['action'])) {
     echo "<tbody>";    
     echo "<tr>";
     echo "<td>";
-    echo "<form name=\"edit\" action=\"action.php\" method=\"GET\">";
-    echo "<select class=\"form-control\" name=\"prio\">\n";
-        echo "<option value=\"2\">".$LANG["normal"]."</option>\n";
-        echo "<option value=\"1\">".$LANG["high"]."</option>\n";
-        echo "<option value=\"3\">".$LANG["low"]."</option>\n";
-        echo "<option value=\"4\">".$LANG["onhold"]."</option>\n";
-        echo "</select>\n";
-    echo "</td>";
+    echo "<form name=\"edit\" action=\"action.php\" method=\"GET\">";  
+?>
+
+<select name="prio" class="form-control" >
+    <option value="2" <?php echo ($shot['priority']=='2') ? "selected" : ""; ?>> <?php echo "".$LANG["normal"]."" ;?></option>
+    <option value="1" <?php echo ($shot['priority']=='1') ? "selected" : ""; ?>><?php echo "".$LANG["high"]."" ;?></option>
+    <option value="3" <?php echo ($shot['priority']=='3') ? "selected" : ""; ?>><?php echo "".$LANG["low"]."" ;?></option>
+    <option value="4" <?php echo ($shot['priority']=='4') ? "selected" : ""; ?>><?php echo "".$LANG["onhold"]."" ;?></option>
+    
+    <?php
+    echo "</select>\n";
+    echo "</td>";    
     echo "<td>";
     echo "<input class=\"form-control\" name=\"scene\" type=\"text\" value=\"".$shot["scene"]."\" ></input>";
     echo "</td>";
