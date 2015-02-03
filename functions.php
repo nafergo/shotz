@@ -144,7 +144,7 @@ function listshots($json_a,$shotstatus,$outputformat) {
     
     array_sort_by_column($json_a, 'priority');
 
-        echo "<table id=\"sortedtable\" class=\"table tablesorter table-hover table-striped\">";
+        echo "<table id=\"sortedtable\" class=\"table tablesorter table-striped\">";
         echo "<thead>";
         echo "<tr>";
         echo "<th class=\"priorities\">".$LANG["priority"]."</th>";
