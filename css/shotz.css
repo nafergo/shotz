@@ -1,9 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Arimo:400,700);
 
-/*---------------------------------
-	OVERRIDES
------------------------------------*/
-
 
 /*---------------------------------
 	LAYOUT
@@ -16,6 +12,14 @@ padding:0;
 color:#000;
 font-family: 'Open Sans', sans-serif;
 }
+
+
+h1.login_title {
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 3em;	
+}
+
 
 .navbar {
 	background-color: #673AB7;

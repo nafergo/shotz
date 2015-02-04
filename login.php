@@ -151,16 +151,16 @@ if ($login == TRUE) {
 			}
 		}
 		if (!isset($_SESSION['ls_id']) || !isset($_SESSION['ls_user']) || !isset($_SESSION['ls_email'])) {
-			$errors[] = "Invalid Login.";
+			$errors[] = "Invalid Login!";
 		?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-<title>Shotz - Error</title>
+<title>Shotz - Login Error</title>
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -185,19 +185,23 @@ if ($login == TRUE) {
 
 	<div class="form-signin">
 	
-		
-		 <h2 class="form-signin-heading">Error</h2>
-
-
+		<h1 class="login_title">Shotz</h1>
+		 <h2 class="form-signin-heading">Login Error</h2>
+				    <div class="form-group">
 					<?php
 			                foreach ($errors as $msg) {
-			                  echo "<h3>$msg</h3>";
+			                  echo "<h2><span class=\"label label-danger\">$msg</span></h2>";			                  
 			                }
 					$errors = '';
 					?>
 
+  						</div>
+  
+					  <div class="form-group">
+					  <h5>Please double-check the details you have entered are correct.</h5>
+  						</div>
 
-						<a class="btn btn-lg btn-block btn-primary" href="<?php echo $_SERVER['HTTP_REFERER']; ?>" rel="">Click Here to go back</a>
+						<a class="btn btn-lg btn-block btn-primary" href="<?php echo $_SERVER['HTTP_REFERER']; ?>" rel="">Click here to go back</a>
 
 		</div>
 
@@ -221,12 +225,12 @@ else if ($register == TRUE) {
 			if ($user == $c_user) { $u_taken = 1; }
 			if ($email == $c_email) { $e_taken = 1; }
 		}
-		if ($user == NULL) { $errors[] = 'User cannot be blank.'; }
-		if ($u_invalid == 1) { $errors[] = 'User <strong>' . htmlspecialchars(decode($user,$keyCode)) . '</strong> is invalid. 3-15 alphanumeric characters required.'; }
+		if ($user == NULL) { $errors[] = 'Username cannot be blank.'; }
+		if ($u_invalid == 1) { $errors[] = 'Username <strong>' . htmlspecialchars(decode($user,$keyCode)) . '</strong> is invalid. 3-15 alphanumeric characters required.'; }
 		if ($u_taken == 1) { $errors[] = 'Username <strong>' . htmlspecialchars(decode($user,$keyCode)) . '</strong> is already taken.'; }
 		if ($email == NULL) { $errors[] = 'Email cannot be blank.'; }
 		if ($e_invalid == 1) { $errors[] = 'Email address <strong>' . htmlspecialchars(decode($email,$keyCode)) . '</strong> is invalid.'; }
-		if ($e_taken == 1) { $errors[] = 'Email address <strong>' . htmlspecialchars(decode($email,$keyCode)) . '</strong> is already taken.'; }
+		if ($e_taken == 1) { $errors[] = 'Email address <strong>' . htmlspecialchars(decode($email,$keyCode)) . '</strong> already registered.'; }
 		if ($pass == sha1(NULL)) { $errors[] = 'Password cannot be blank.'; }
 		if ($p_invalid == 1) { $errors[] = 'Password is invalid. 3-15 alphanumeric characters required.'; }
 		if ($repeat == sha1(NULL)) { $errors[] = 'Password verification cannot be blank.'; }
@@ -245,7 +249,7 @@ else if ($register == TRUE) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -294,9 +298,12 @@ else if ($register == TRUE) {
 	<div class="container">    
 			
 
-				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="form-signin" method="post"><h1>Shotz</h1>
+				<form class="form-signin">
 				     <h2 class="form-signin-heading">New Login Created!</h2>
+				     <h2><span class="label label-success">Registration Was Successful</span></h2>
+
 	
+		
 
 						<a class="btn btn-lg btn-primary btn-block" href="<?php echo $_SERVER['REQUEST_URI']; ?>" rel="">Back To Admin</a>
 
@@ -320,7 +327,7 @@ else if ($register == TRUE) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -369,12 +376,12 @@ else if ($register == TRUE) {
 	<div class="container">    
 			
 
-				<form class="form-signin" method="post"><h1>Shotz</h1>
+				<form class="form-signin">
 				     <h2 class="form-signin-heading">Error!</h2>
 	
 						<?php
 			                foreach ($errors as $msg) {
-			                  echo "<h3>$msg</h3>";
+			                  echo "<h2><span class=\"label label-danger\">$msg</span></h2>";
 			                }
 					$errors = '';
 					?>
@@ -406,7 +413,7 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -455,25 +462,25 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 	<div class="container">    
 			
 
-				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="form-signin" method="post"><h1>Shotz</h1>
+				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="form-signin" method="post">
 				     <h2 class="form-signin-heading">Create New User Login</h2>
 				    <div class="form-group">				     				     
-						<label class="sr-only">User:</label>
+						<label class="">Username</label>
 						<input type="text" name="ls_user" value="" class="form-control" placeholder="Enter username"/>
   						</div>
 						
 				    <div class="form-group">						
-						<label class="sr-only">Email Address:</label>
+						<label class="">Email Address</label>
 						<input type="text" name="ls_email" value="" class="form-control" placeholder="Enter email" />
   						</div>
 
 				    <div class="form-group">
-						<label class="sr-only">Password:</label>
+						<label class="">Password</label>
 						<input type="password" name="ls_pass" value="" class="form-control" placeholder="Password" />
   						</div>
 
 				    <div class="form-group">
-						<label class="sr-only">Password Repeat:</label>
+						<label class="">Repeat Password</label>
 						<input type="password" name="ls_repeat" value="" class="form-control" placeholder="Repeat Password" />
   						</div>
 
@@ -501,7 +508,7 @@ else if (!isset($_SESSION['ls_id']) && !isset($_SESSION['ls_user']) && !isset($_
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -526,7 +533,7 @@ else if (!isset($_SESSION['ls_id']) && !isset($_SESSION['ls_user']) && !isset($_
 
 	<div class="container">    
 			
-				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="form-signin" method="post"><h1>Shotz</h1>
+				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="form-signin" method="post"><h1 class="login_title">Shotz</h1>
 				     <h2 class="form-signin-heading">Please sign in</h2>
 				    <div class="form-group">
 				    <label for="inputUser" class="sr-only">User</label>
