@@ -192,6 +192,8 @@ td.status_column {
 .artistsadmin {
 	background-color: ;
 	color: ;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 .artistsadmin:hover {
@@ -206,6 +208,8 @@ td.status_column {
 .tasksadmin {
 	background-color: ;
 	color: ;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 .tasksadmin:hover {
@@ -220,6 +224,8 @@ td.status_column {
 .statusesadmin {
 	background-color: ;
 	color: ;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 .statusesadmin:hover {
@@ -234,6 +240,8 @@ td.status_column {
 .colorsadmin {
 	background-color: ;
 	color: ;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 .colorsadmin:hover {
@@ -242,5 +250,21 @@ td.status_column {
 }
 
 .colorsadmin h2 {
+	color: ;
+}
+
+.loginsadmin {
+	background-color: ;
+	color: ;
+		margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.loginsadmin:hover {
+	background-color: ;
+	color: ;
+}
+
+.loginsadmin h2 {
 	color: ;
 }

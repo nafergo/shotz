@@ -31,6 +31,7 @@
       
      		    <p>Shotz uses the <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> framework,
      		    <a href="http://www.datatables.net/" target="_blank">DataTables</a> plug-in for jQuery,     		     
+     		    <a href="http://tarruda.github.io/bootstrap-datetimepicker/" target="_blank">bootstrap-datetimepicker</a>,     		     
      		    <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> icons and
      		    <a href="http://www.google.com/fonts/specimen/Open+Sans" target="_blank">Open Sans</a> font.</p>
      		    
