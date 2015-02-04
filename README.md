@@ -14,24 +14,33 @@ Check license file - https://github.com/nafergo/shotz/blob/master/license.txt
 Shotz is based on:
 * tasks.php by RaymiiOrg (Remy van Elst) https://github.com/RaymiiOrg/tasks.php
 * bootstrap framework https://github.com/twbs/bootstrap
+* DataTables plug-in for jQuery http://www.datatables.net/
+* bootstrap-datetimepicker http://tarruda.github.io/bootstrap-datetimepicker/
+* Login Session http://www.myphpscripts.net/?sid=7
+* Font Awesome http://fortawesome.github.io/Font-Awesome/
+* Open Sans font http://www.google.com/fonts/specimen/Open+Sans
+
 
 Main features:
-* add/edit/delete shots and tasks via webpage
+* easy add/edit/close/delete shots via webpage
 * bootstrap interface
-* assign users to shots/tasks
-* simple install, no database required (uses a JSON text file)
+* assign shot users, tasks and status by simple dropdown
+* simple install, no database required (uses a JSON file and some txt)
 * prioritize shots
 * due date on shots, time left/late shown.
 * trash bin for deleted shots
-* easy add/edit user list, task list and statuses list
+* easy add/edit artist list, task list and statuses list
 * display the number and % of shots done and frames rendered
 * easy translation
-
+* login system and user creation system
 
  
 
 ## Installation
 1.  unzip, upload the files to your web server and visit index.php
+2. Login with username "admin" and password "admin"
+3. Create new login in Admin area
+4. Security reasons: Edit users.txt and delete first user :) 
 
 ## Frequently Asked Questions
 
@@ -43,4 +52,4 @@ If you have any bugs to report or ideas, please create a new issue.
 
 
 ### Support
-If you have problems, we suggest you check folder/file permissions. Make sure that the webserver can write to the json file.
+If you have problems, we suggest you check folder/file permissions.
