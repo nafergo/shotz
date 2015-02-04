@@ -1,6 +1,5 @@
+<?php require("login.php"); ?>
 <?php
-
-
 
 include("functions.php");
 
@@ -15,7 +14,7 @@ $link = file_get_contents('storage/shot.json');
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -57,6 +56,7 @@ $link = file_get_contents('storage/shot.json');
             <li><a href="stats.php">Stats</a></li>            
             <li><a href="admin.php">Admin</a></li>
             <li><a href="trash.php">Trash</a></li>
+            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel="">Logout</a> </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

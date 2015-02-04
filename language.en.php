@@ -20,7 +20,7 @@
 
 $LANG = array(
     "softwarename" => "Shotz",
-    "softwareversion" => "0.2",
+    "softwareversion" => "0.3",
     "moviename" => "set title in language.en.php file",        
     "shottodo" => "Shot number",
     "shotscene" => "Scene heading",

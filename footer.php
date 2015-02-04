@@ -29,12 +29,15 @@
    <p>Shotz was developed by nafergo (animaxionstudioz.com), with the precious help of <a href="https://github.com/ivanterra" target="_blank">Ivan Terra</a>, 
    for internal/personal use.</p>
       
-     		    <p>Shotz uses the <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> framework,
-     		    <a href="http://www.datatables.net/" target="_blank">DataTables</a> plug-in for jQuery,     		     
-     		    <a href="http://tarruda.github.io/bootstrap-datetimepicker/" target="_blank">bootstrap-datetimepicker</a>,     		     
-     		    <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> icons and
-     		    <a href="http://www.google.com/fonts/specimen/Open+Sans" target="_blank">Open Sans</a> font.</p>
-     		    
+     		    <p>Shotz was developed with...</p>
+     		    <ul class="list-unstyled">
+     		    <li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> framework,</li>
+     		    <li><a href="http://www.datatables.net/" target="_blank">DataTables</a> plug-in for jQuery,</li>     		     
+     		    <li><a href="http://tarruda.github.io/bootstrap-datetimepicker/" target="_blank">bootstrap-datetimepicker</a>,</li>     		     
+     		    <li><a href="http://www.myphpscripts.net/?sid=7" target="_blank">Login Session</a>,</li>
+     		    <li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> icons and</li>
+     		    <li><a href="http://www.google.com/fonts/specimen/Open+Sans" target="_blank">Open Sans</a> font.</li>
+     		    </ul>
       		    <p>Contacts:</p>  
 <p><i class="fa fa-envelope-o"></i> nafergo[AT]animaxionstudioz[DOT]com</p>
 <p><i class="fa fa-github-alt"></i> <a href="https://github.com/nafergo/shotz/" target="_blank">Shotz repository</a></p>
