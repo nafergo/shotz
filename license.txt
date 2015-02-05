@@ -1,6 +1,5 @@
 # License
 
-
 ## Code by Nelson Gonçalves (animaxionstudioz.com) and Ivan Terra
 
 released under GNU General Public License, version 3.
