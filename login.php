@@ -50,12 +50,10 @@ body {
   z-index: 2;
 }
 .form-signin input[type="text"] {
-  margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -190,7 +188,7 @@ if ($login == TRUE) {
 				    <div class="form-group">
 					<?php
 			                foreach ($errors as $msg) {
-			                  echo "<h2><span class=\"label label-danger\">$msg</span></h2>";			                  
+			                  echo "<h2><span class=\"label label-danger\"><i class=\"fa fa-exclamation-circle\"></i> $msg</span></h2>";			                  
 			                }
 					$errors = '';
 					?>
@@ -201,7 +199,7 @@ if ($login == TRUE) {
 					  <h5>Please double-check the details you have entered are correct.</h5>
   						</div>
 
-						<a class="btn btn-lg btn-block btn-primary" href="<?php echo $_SERVER['HTTP_REFERER']; ?>" rel="">Click here to go back</a>
+						<a class="btn btn-lg btn-block btn-primary" href="<?php echo $_SERVER['HTTP_REFERER']; ?>" rel="">Click here to retry</a>
 
 		</div>
 
@@ -284,12 +282,12 @@ else if ($register == TRUE) {
         <div id="navbar" class="navbar-collapse collapse">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="finished.php">Finished</a></li>
-            <li><a href="stats.php">Stats</a></li>            
-            <li class="active"><a href="admin.php">Admin</a></li>
-            <li><a href="trash.php">Trash</a></li>
-            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel="">Logout</a> </li>
+            <li><a href="index.php"><i class="fa fa-tasks"></i> Home</a></li>
+            <li><a href="finished.php"><i class="fa fa-check-square-o"></i> Finished</a></li>
+            <li><a href="stats.php"><i class="fa fa-bar-chart"></i> Stats</a></li>            
+            <li class="active"><a href="admin.php"><i class="fa fa-cogs"></i> Admin</a></li>
+            <li><a href="trash.php"><i class="fa fa-trash-o"></i> Trash</a></li>
+            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel=""><i class="fa fa-sign-out"></i> Logout</a> </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -299,9 +297,10 @@ else if ($register == TRUE) {
 			
 
 				<form class="form-signin">
-				     <h2 class="form-signin-heading">New Login Created!</h2>
-				     <h2><span class="label label-success">Registration Was Successful</span></h2>
-
+				     <h2 class="form-signin-heading">Registration Successful</h2>
+				     	 <div class="form-group">
+				     <h2><span class="label label-success"><i class="fa fa-thumbs-o-up"></i> New Login Created!</span></h2>
+						</div>
 	
 		
 
@@ -362,12 +361,12 @@ else if ($register == TRUE) {
         <div id="navbar" class="navbar-collapse collapse">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="finished.php">Finished</a></li>
-            <li><a href="stats.php">Stats</a></li>            
-            <li class="active"><a href="admin.php">Admin</a></li>
-            <li><a href="trash.php">Trash</a></li>
-            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel="">Logout</a> </li>
+            <li><a href="index.php"><i class="fa fa-tasks"></i> Home</a></li>
+            <li><a href="finished.php"><i class="fa fa-check-square-o"></i> Finished</a></li>
+            <li><a href="stats.php"><i class="fa fa-bar-chart"></i> Stats</a></li>            
+            <li class="active"><a href="admin.php"><i class="fa fa-cogs"></i> Admin</a></li>
+            <li><a href="trash.php"><i class="fa fa-trash-o"></i> Trash</a></li>
+            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel=""><i class="fa fa-sign-out"></i> Logout</a> </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -377,15 +376,16 @@ else if ($register == TRUE) {
 			
 
 				<form class="form-signin">
-				     <h2 class="form-signin-heading">Error!</h2>
+				     <h2 class="form-signin-heading">Login Creation ERROR!</h2>
+				     					  <div class="form-group">
 	
 						<?php
 			                foreach ($errors as $msg) {
-			                  echo "<h2><span class=\"label label-danger\">$msg</span></h2>";
+			                  echo "<h2><span class=\"label label-danger\"><i class=\"fa fa-exclamation-circle\"></i> $msg</span></h2>";
 			                }
 					$errors = '';
 					?>
-	
+									</div>	
 
 						<a class="btn btn-lg btn-primary btn-block" href="<?php echo $_SERVER['HTTP_REFERER']; ?>" rel="">Go Back</a>
 
@@ -448,12 +448,12 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
         <div id="navbar" class="navbar-collapse collapse">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="finished.php">Finished</a></li>
-            <li><a href="stats.php">Stats</a></li>            
-            <li class="active"><a href="admin.php">Admin</a></li>
-            <li><a href="trash.php">Trash</a></li>
-            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel="">Logout</a> </li>
+            <li><a href="index.php"><i class="fa fa-tasks"></i> Home</a></li>
+            <li><a href="finished.php"><i class="fa fa-check-square-o"></i> Finished</a></li>
+            <li><a href="stats.php"><i class="fa fa-bar-chart"></i> Stats</a></li>            
+            <li class="active"><a href="admin.php"><i class="fa fa-cogs"></i> Admin</a></li>
+            <li><a href="trash.php"><i class="fa fa-trash-o"></i> Trash</a></li>
+            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel=""><i class="fa fa-sign-out"></i> Logout</a> </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -463,28 +463,36 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 			
 
 				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="form-signin" method="post">
-				     <h2 class="form-signin-heading">Create New User Login</h2>
+				     <h2 class="form-signin-heading">Create New Login</h2>
 				    <div class="form-group">				     				     
-						<label class="">Username</label>
+						<label class="">Username</label>				    
+				    <div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div>    											
 						<input type="text" name="ls_user" value="" class="form-control" placeholder="Enter username"/>
+						</div>
   						</div>
 						
 				    <div class="form-group">						
 						<label class="">Email Address</label>
+				    <div class="input-group"><div class="input-group-addon">@</div>    											
 						<input type="text" name="ls_email" value="" class="form-control" placeholder="Enter email" />
+						</div>
   						</div>
 
 				    <div class="form-group">
 						<label class="">Password</label>
+				    <div class="input-group"><div class="input-group-addon"><i class="fa fa-lock"></i></div>    											
 						<input type="password" name="ls_pass" value="" class="form-control" placeholder="Password" />
+						</div>
   						</div>
 
 				    <div class="form-group">
 						<label class="">Repeat Password</label>
+				    <div class="input-group"><div class="input-group-addon"><i class="fa fa-lock"></i></div>    											
 						<input type="password" name="ls_repeat" value="" class="form-control" placeholder="Repeat Password" />
+						</div>
   						</div>
 
-			        <button class="btn btn-lg btn-primary btn-block" name="ls_reg" value="Register" type="submit">Create New Login</button>					
+			        <button class="btn btn-lg btn-primary btn-block" name="ls_reg" value="Register" type="submit"><i class="fa fa-key"></i> Create New Login</button>					
 
 
 						<a class="btn btn-lg btn-danger btn-block" href="<?php echo $_SERVER['PHP_SELF'] ?>" rel="">Cancel</a>
@@ -537,15 +545,17 @@ else if (!isset($_SESSION['ls_id']) && !isset($_SESSION['ls_user']) && !isset($_
 				     <h2 class="form-signin-heading">Please sign in</h2>
 				    <div class="form-group">
 				    <label for="inputUser" class="sr-only">User</label>
+				    <div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div>
     					<input type="text" name="ls_user" value="" class="form-control" id="inputUser" placeholder="Enter username">
   						</div>
-					
+  						</div>					
 					  <div class="form-group">
     					<label for="inputPassword" class="sr-only">Password</label>
+				    <div class="input-group"><div class="input-group-addon"><i class="fa fa-lock"></i></div>    					
     					<input type="password" name="ls_pass" value="" class="form-control" id="inputPassword" placeholder="Password">
   						</div>
-					
-			        <button class="btn btn-lg btn-primary btn-block" name="ls_log" value="Log In" type="submit">Sign in</button>					
+  						</div>					
+			        <button class="btn btn-lg btn-primary btn-block" name="ls_log" value="Log In" type="submit"><i class="fa fa-sign-in"></i> Sign in</button>					
 					
 				</form>
 

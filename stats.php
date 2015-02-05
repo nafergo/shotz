@@ -49,7 +49,7 @@ $countpercentframes = round($countpercentframes); //
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -86,12 +86,12 @@ $countpercentframes = round($countpercentframes); //
         <div id="navbar" class="navbar-collapse collapse">
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="finished.php">Finished</a></li>
-            <li class="active"><a href="stats.php">Stats</a></li>
-            <li><a href="admin.php">Admin</a></li>
-            <li><a href="trash.php">Trash</a></li>
-            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel="">Logout</a> </li>
+            <li><a href="index.php"><i class="fa fa-tasks"></i> Home</a></li>
+            <li><a href="finished.php"><i class="fa fa-check-square-o"></i> Finished</a></li>
+            <li class="active"><a href="stats.php"><i class="fa fa-bar-chart"></i> Stats</a></li>            
+            <li><a href="admin.php"><i class="fa fa-cogs"></i> Admin</a></li>
+            <li><a href="trash.php"><i class="fa fa-trash-o"></i> Trash</a></li>
+            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel=""><i class="fa fa-sign-out"></i> Logout</a> </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

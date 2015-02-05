@@ -1,4 +1,3 @@
-
   <?php 
 
 $LANG=NULL;
@@ -27,7 +26,7 @@ $statuse=$_POST['statuse'];
       $current = json_decode($current, TRUE);
       $json_update["shots"]["$item"] = array("user" => $user, "task"=> $task, "statuse"=>$statuse );
       $replaced = array_replace_recursive($current, $json_update);
-      $replaced = json_encode($replaced,JSON_PRETTY_PRINT);
+      $replaced = json_encode($replaced);
       if(file_put_contents($file, $replaced, LOCK_EX)) {
        //
       } else {
