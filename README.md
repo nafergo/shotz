@@ -37,10 +37,10 @@ Main features:
  
 
 ## Installation
-1.  unzip, upload the files to your web server and visit index.php
+1. Unzip, upload the files (make sure you also upload .htaccess) to your web server and visit index.php
 2. Login with username "admin" and password "admin"
 3. Create new login in Admin area
-4. Security reasons: Edit users.txt and delete first user :) 
+4. Security reasons: change admin password :)
 
 ## Frequently Asked Questions
 

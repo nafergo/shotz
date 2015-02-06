@@ -78,6 +78,9 @@ platform (<a href="https://github.com/RaymiiOrg/tasks.php" target="_blank">tasks
 <h3>Where is the source-code?</h3>
 <p>Please, visit <a href="https://github.com/nafergo/shotz/" target="_blank">Shotz repository at GitHub</a>. Download and just edit the files. Everything you need is there :)</p>
 
+<h3>What about the avatar?</h3>
+<p>Shotz uses <a href="https://en.gravatar.com/"target="_blank">Gravatars</a>. Your gravatar email is used to display the avatar.</p>
+
 <h3>Where is the database?</h3>
 <p>Shotz uses a simple flat file for storage. It's a JSON text file called shot.json.</p>
 
@@ -86,7 +89,7 @@ platform (<a href="https://github.com/RaymiiOrg/tasks.php" target="_blank">tasks
  are no current plans to develop this any further. Our development goes in a strict as-needed policy.</p>
 
 <h3>It doesn't work!!!</h3>
-<p>If you have problems, please check folder/file permissions. Make sure that the webserver can write to the json file.</p>
+<p>If you have problems, please check folder/files permissions. Make sure that the webserver can write to the json file.</p>
 
 <h3>How do I empty the Trash Bin?</h3>
 <p>That's a "feature" from the original code of <a href="https://github.com/RaymiiOrg/tasks.php" target="_blank">tasks.php</a>. We will probably change this sooner or later but it's not 

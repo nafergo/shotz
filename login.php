@@ -158,7 +158,7 @@ if ($login == TRUE) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -247,7 +247,7 @@ else if ($register == TRUE) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -267,8 +267,8 @@ else if ($register == TRUE) {
 		</style>
 </head>
 	<body style="background-color: #FFF;">
-	  <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+   <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -287,7 +287,18 @@ else if ($register == TRUE) {
             <li><a href="stats.php"><i class="fa fa-bar-chart"></i> Stats</a></li>            
             <li class="active"><a href="admin.php"><i class="fa fa-cogs"></i> Admin</a></li>
             <li><a href="trash.php"><i class="fa fa-trash-o"></i> Trash</a></li>
-            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel=""><i class="fa fa-sign-out"></i> Logout</a> </li>
+           
+ 
+ <li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="img-circle" style="margin-top: -15px;margin-bottom: -15px;" src="http://www.gravatar.com/avatar/<?php echo md5(strtolower(trim($_SESSION['ls_email']))); ?>?size=32" alt=""> <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="edit_profile.php"><i class="fa fa-user"></i> Edit Profile</a></li>
+ <li class="divider"></li> 
+<li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel=""><i class="fa fa-sign-out"></i> Logout</a></li>
+</ul>
+</li>
+
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -326,7 +337,7 @@ else if ($register == TRUE) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -346,8 +357,8 @@ else if ($register == TRUE) {
 		</style>
 </head>
 	<body style="background-color: #FFF;">
-	  <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+   <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -366,7 +377,18 @@ else if ($register == TRUE) {
             <li><a href="stats.php"><i class="fa fa-bar-chart"></i> Stats</a></li>            
             <li class="active"><a href="admin.php"><i class="fa fa-cogs"></i> Admin</a></li>
             <li><a href="trash.php"><i class="fa fa-trash-o"></i> Trash</a></li>
-            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel=""><i class="fa fa-sign-out"></i> Logout</a> </li>
+           
+ 
+ <li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="img-circle" style="margin-top: -15px;margin-bottom: -15px;" src="http://www.gravatar.com/avatar/<?php echo md5(strtolower(trim($_SESSION['ls_email']))); ?>?size=32" alt=""> <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="edit_profile.php"><i class="fa fa-user"></i> Edit Profile</a></li>
+ <li class="divider"></li> 
+<li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel=""><i class="fa fa-sign-out"></i> Logout</a></li>
+</ul>
+</li>
+
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -413,7 +435,7 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -433,8 +455,8 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 		</style>
 </head>
 	<body style="background-color: #FFF;">
-	  <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+   <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -453,7 +475,18 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
             <li><a href="stats.php"><i class="fa fa-bar-chart"></i> Stats</a></li>            
             <li class="active"><a href="admin.php"><i class="fa fa-cogs"></i> Admin</a></li>
             <li><a href="trash.php"><i class="fa fa-trash-o"></i> Trash</a></li>
-            <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel=""><i class="fa fa-sign-out"></i> Logout</a> </li>
+           
+ 
+ <li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="img-circle" style="margin-top: -15px;margin-bottom: -15px;" src="http://www.gravatar.com/avatar/<?php echo md5(strtolower(trim($_SESSION['ls_email']))); ?>?size=32" alt=""> <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="edit_profile.php"><i class="fa fa-user"></i> Edit Profile</a></li>
+ <li class="divider"></li> 
+<li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel=""><i class="fa fa-sign-out"></i> Logout</a></li>
+</ul>
+</li>
+
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -476,6 +509,7 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 				    <div class="input-group"><div class="input-group-addon">@</div>    											
 						<input type="text" name="ls_email" value="" class="form-control" placeholder="Enter email" />
 						</div>
+												    <p class="help-block">Email is for displaying <a href="https://en.gravatar.com/"target="_blank">Gravatar</a>.</p>
   						</div>
 
 				    <div class="form-group">
@@ -516,7 +550,7 @@ else if (!isset($_SESSION['ls_id']) && !isset($_SESSION['ls_user']) && !isset($_
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
