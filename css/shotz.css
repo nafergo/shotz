@@ -21,39 +21,11 @@ h1.login_title {
 }
 
 
-.navbar {
-	background-color: #673AB7;
-	border-radius: 0em;
-	border-color: #673AB7;
-	box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+.navbar-brand{
+	text-transform: uppercase;
 }
 
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-    color: #FFF;
-}
 
-.navbar-default .navbar-brand {
-    color: #FFF;
-    text-transform: uppercase;
- }
-
-a.navbar-brand:hover {
-    color: #FFF;
-}
-
-.navbar-default .navbar-nav > li > a {
-    color: #FFF;
-}
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    color: #FFF;
-    background-color: #7C4DFF;
-}
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #FFF;
-    background-color: #7C4DFF;
-}
 
 .page-header {
 	margin-top: 70px;
@@ -142,11 +114,11 @@ td.task_column {
 	}
 
 td.status_column {
-	background-color: #eeff41;	
+	background-color: #7C4DFF;
 	}	
 
 .table-striped > tbody > tr:nth-child(2n+1) > td.status_column {
-	background-color: #cddc39;
+	background-color: #673AB7;
 	}	
 
 .high_priority {
