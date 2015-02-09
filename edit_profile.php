@@ -50,7 +50,7 @@
  <li class="dropdown active">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="img-circle" style="margin-top: -15px;margin-bottom: -15px;" src="http://www.gravatar.com/avatar/<?php echo md5(strtolower(trim($_SESSION['ls_email']))); ?>?size=32" alt=""> <b class="caret"></b></a>
 <ul class="dropdown-menu">
-<li><a href="edit_profile2.php"><i class="fa fa-user"></i> Edit Profile</a></li>
+<li><a href="edit_profile.php"><i class="fa fa-user"></i> Edit Profile</a></li>
  <li class="divider"></li> 
 <li><a href="<?php $_SERVER['PHP_SELF']; ?>?ls_logout" rel=""><i class="fa fa-sign-out"></i> Logout</a></li>
 </ul>
