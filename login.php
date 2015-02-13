@@ -158,7 +158,7 @@ if ($login == TRUE) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -247,7 +247,7 @@ else if ($register == TRUE) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -337,7 +337,7 @@ else if ($register == TRUE) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -435,7 +435,7 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -498,29 +498,29 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="form-signin" method="post">
 				     <h2 class="form-signin-heading">Create New Login</h2>
 				    <div class="form-group">				     				     
-						<label class="">Username</label>				    
+						<label class="sr-only">Username</label>				    
 				    <div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div>    											
 						<input type="text" name="ls_user" value="" class="form-control" placeholder="Enter username"/>
 						</div>
   						</div>
 						
 				    <div class="form-group">						
-						<label class="">Email Address</label>
+						<label class="sr-only">Email Address</label>
 				    <div class="input-group"><div class="input-group-addon">@</div>    											
 						<input type="text" name="ls_email" value="" class="form-control" placeholder="Enter email" />
 						</div>
-												    <p class="help-block">Email is for displaying <a href="https://en.gravatar.com/"target="_blank">Gravatar</a>.</p>
+						<p class="help-block">This email address is for displaying a <a href="https://en.gravatar.com/"target="_blank">Gravatar</a>. </p>
   						</div>
 
 				    <div class="form-group">
-						<label class="">Password</label>
+						<label class="sr-only">Password</label>
 				    <div class="input-group"><div class="input-group-addon"><i class="fa fa-lock"></i></div>    											
 						<input type="password" name="ls_pass" value="" class="form-control" placeholder="Password" />
 						</div>
   						</div>
 
 				    <div class="form-group">
-						<label class="">Repeat Password</label>
+						<label class="sr-only">Repeat Password</label>
 				    <div class="input-group"><div class="input-group-addon"><i class="fa fa-lock"></i></div>    											
 						<input type="password" name="ls_repeat" value="" class="form-control" placeholder="Repeat Password" />
 						</div>
@@ -550,7 +550,7 @@ else if (!isset($_SESSION['ls_id']) && !isset($_SESSION['ls_user']) && !isset($_
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     

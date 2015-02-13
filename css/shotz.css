@@ -144,7 +144,7 @@ td.status_column {
 
 .low_priority {
 	color: white;
-	background-color: #795548;
+	background-color: #607d8b;
 	border-radius: 3px;
 	width: 100px;
 	height: 100%;
@@ -154,7 +154,7 @@ td.status_column {
 
 .onhold_priority {
 	color: white;
-	background-color: #607d8b;
+	background-color: #9e9e9e;
 	border-radius: 3px;
 	width: 100px;
 	height: 100%;

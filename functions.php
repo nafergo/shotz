@@ -288,17 +288,17 @@ $select = '<select class="form-control select_statuse" name="statuse" id="'.$ite
                     switch ($shotstatus) {
                         case 'open':
                                             #done
-                        echo "<li><a href=\"action.php?id=" .$item. "&action=done\" rel=\"tooltip\" data-placement=\"top\" alt=\"Shot done!\" title=\"Shot done!\"><i class=\"fa-lg fa fa-check-square-o\"></i></a></li>";
+                        echo "<li><a type=\"button\" class=\"btn btn-success\" href=\"action.php?id=" .$item. "&action=done\" rel=\"tooltip\" data-placement=\"top\" alt=\"Shot done!\" title=\"Shot done!\"><i class=\"fa-lg fa fa-check-square-o\"></i></a></li>";
                                             #edit
                         echo "  ";
-                        echo "<li><a href=\"action.php?id=" .$item. "&action=edit\" rel=\"tooltip\" data-placement=\"top\" alt=\"Edit\" title=\"Edit\"><i class=\"fa-lg fa fa-pencil-square-o\"></i></a></li>";
+                        echo "<li><a type=\"button\" class=\"btn btn-warning\" href=\"action.php?id=" .$item. "&action=edit\" rel=\"tooltip\" data-placement=\"top\" alt=\"Edit\" title=\"Edit\"><i class=\"fa-lg fa fa-pencil-square-o\"></i></a></li>";
                                             #delete
                         echo "  ";
-                        echo "<li><a href=\"action.php?id=" . $item . "&action=delete\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a></li>";
+                        echo "<li><a type=\"button\" class=\"btn btn-danger\" href=\"action.php?id=" . $item . "&action=delete\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a></li>";
                         break;
 
                         case 'closed':
-                        echo "<li><a href=\"action.php?id=" .$item. "&action=delete\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a></li>";
+                        echo "<li><a type=\"button\" class=\"btn btn-danger\" href=\"action.php?id=" .$item. "&action=delete\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a></li>";
                         break;
                     }                                        
                     echo "</ul></td>";
