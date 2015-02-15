@@ -283,25 +283,25 @@ $select = '<select class="form-control select_statuse" name="statuse" id="'.$ite
 
                     echo "</td>";
                                     #action:
-                    echo "<td class=\"\"> <ul class=\"pull-right list-inline\">";
+                    echo "<td class=\"pull-right action_buttons\"> ";
 
                     switch ($shotstatus) {
                         case 'open':
                                             #done
-                        echo "<li><a type=\"button\" class=\"btn btn-success\" href=\"action.php?id=" .$item. "&action=done\" rel=\"tooltip\" data-placement=\"top\" alt=\"Shot done!\" title=\"Shot done!\"><i class=\"fa-lg fa fa-check-square-o\"></i></a></li>";
+                        echo "<a type=\"button\" class=\"btn btn-success\" href=\"action.php?id=" .$item. "&action=done\" rel=\"tooltip\" data-placement=\"top\" alt=\"Shot done!\" title=\"Shot done!\"><i class=\"fa-lg fa fa-check-square-o\"></i></a>";
                                             #edit
                         echo "  ";
-                        echo "<li><a type=\"button\" class=\"btn btn-warning\" href=\"action.php?id=" .$item. "&action=edit\" rel=\"tooltip\" data-placement=\"top\" alt=\"Edit\" title=\"Edit\"><i class=\"fa-lg fa fa-pencil-square-o\"></i></a></li>";
+                        echo "<a type=\"button\" class=\"btn btn-warning\" href=\"action.php?id=" .$item. "&action=edit\" rel=\"tooltip\" data-placement=\"top\" alt=\"Edit\" title=\"Edit\"><i class=\"fa-lg fa fa-pencil-square-o\"></i></a>";
                                             #delete
                         echo "  ";
-                        echo "<li><a type=\"button\" class=\"btn btn-danger\" href=\"action.php?id=" . $item . "&action=delete\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a></li>";
+                        echo "<a type=\"button\" class=\"btn btn-danger\" href=\"action.php?id=" . $item . "&action=delete\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a>";
                         break;
 
                         case 'closed':
-                        echo "<li><a type=\"button\" class=\"btn btn-danger\" href=\"action.php?id=" .$item. "&action=delete\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a></li>";
+                        echo "<a type=\"button\" class=\"btn btn-danger\" href=\"action.php?id=" .$item. "&action=delete\" rel=\"tooltip\" data-placement=\"top\" alt=\"Delete\" title=\"Delete\"><i class=\"fa-lg fa fa-trash-o\"></i></a>";
                         break;
                     }                                        
-                    echo "</ul></td>";
+                    echo "</td>";
                     echo "</tr>";
                  
                 $shotnumber+=1;

@@ -124,7 +124,6 @@ td.status_column {
 .high_priority {
 	color: white;
 	background-color: #f44336;
-	border-radius: 3px;
 	width: 100px;
 	height: 100%;
 	text-transform: uppercase;
@@ -134,7 +133,6 @@ td.status_column {
 .normal_priority {
 	color: white;
 	background-color: #4caf50;
-	border-radius: 3px;
 	width: 100px;
 	height: 100%;
 	text-transform: uppercase;
@@ -145,7 +143,6 @@ td.status_column {
 .low_priority {
 	color: white;
 	background-color: #607d8b;
-	border-radius: 3px;
 	width: 100px;
 	height: 100%;
 	text-transform: uppercase;
@@ -155,7 +152,6 @@ td.status_column {
 .onhold_priority {
 	color: white;
 	background-color: #9e9e9e;
-	border-radius: 3px;
 	width: 100px;
 	height: 100%;
 	text-transform: uppercase;
@@ -243,4 +239,8 @@ td.status_column {
 
 .loginsadmin h2 {
 	color: ;
+}
+
+.action_buttons a {
+	width: auto;
 }
