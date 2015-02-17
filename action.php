@@ -104,7 +104,7 @@ if (empty($_GET['action'])) {
     echo "<th>".$LANG["user"]."</th>";
     echo "<th>".$LANG["task"]."</th>";
     echo "<th>".$LANG["statuse"]."</th>";
-    echo "<th class=\"duedate\">".$LANG["duedate"]."</th>";
+    echo "<th class=\"duedate_column2 duedate\">".$LANG["duedate"]."</th>";
     echo "<th>".$LANG["addsomething"]."</th>";
     echo "</tr>";
     echo "</thead>";    
@@ -174,10 +174,10 @@ $select = '<select class="form-control" name="statuse">'.$options.'</select>';
 echo $select;
 
     echo "</td>";
-    echo "<td class=\"duedate\">";
+    echo "<td class=\"duedate_column2\">";
     echo "<div id=\"datetimepicker4\" class=\"input-group\"><input placeholder=\"MM-DD-YYYY\" data-format=\"MM-dd-yyyy\" class=\"form-control\" name=\"duedate\" size=10 type=\"text\" value=\"".$shot["duedate"]."\"></input><div class=\"add-on input-group-addon\"><i data-time-icon=\"icon-time\" data-date-icon=\"icon-calendar\" class=\"fa fa-calendar\"></i></div></div>\n";  
     echo "</td>";
-    echo "<td class=\"center_me\">";
+    echo "<td class=\"\">";
     echo "<input type=\"hidden\" name=\"action\" value=\"update\"></input>";
     echo "<input name=\"dateadded\" type=\"hidden\" value=\"".$shot["dateadded"]."\"></input>\n";
     echo "<input type=\"hidden\" name=\"id\" value=\"".  $item ."\"></input>";

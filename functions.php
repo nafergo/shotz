@@ -45,15 +45,15 @@ function showinputform($actionpage) {
     echo "<table class=\"table\">";
     echo "<thead>";
     echo "<tr>";
-    echo "<th class=\"priorities\">".$LANG["priority"]."</th>";
-    echo "<th>".$LANG["scene"]."</th>";
-    echo "<th>".$LANG["shot"]."</th>";
-    echo "<th>".$LANG["frames"]."</th>";
-    echo "<th>".$LANG["user"]."</th>";
-    echo "<th>".$LANG["task"]."</th>";
-    echo "<th>".$LANG["statuse"]."</th>";        
-    echo "<th class=\"duedate\">".$LANG["duedate"]."</th>";
-    echo "<th></th>";
+    echo "<th class=\"priorities priority_column\">".$LANG["priority"]."</th>";
+    echo "<th class=\"scene_column\">".$LANG["scene"]."</th>";
+    echo "<th class=\"shot_column\">".$LANG["shot"]."</th>";
+    echo "<th class=\"\">".$LANG["frames"]."</th>";
+    echo "<th class=\"user_column\">".$LANG["user"]."</th>";
+    echo "<th class=\"task_column\">".$LANG["task"]."</th>";
+    echo "<th class=\"statuse_column\">".$LANG["statuse"]."</th>";        
+    echo "<th class=\"duedate_column2 \">".$LANG["duedate"]."</th>";
+    echo "<th class=\"\"></th>";
     echo "</tr>";
     echo "</thead>";
     echo "<tbody>";  
@@ -147,17 +147,17 @@ function listshots($json_a,$shotstatus,$outputformat) {
         echo "<table id=\"sortedtable\" class=\"table tablesorter table-striped\">";
         echo "<thead>";
         echo "<tr>";
-        echo "<th class=\"priorities\">".$LANG["priority"]."</th>";
-        echo "<th>".$LANG["scene"]."</th>";
-        echo "<th>".$LANG["shot"]."</th>";
-        echo "<th>".$LANG["frames"]."</th>";
-       echo "<th>".$LANG["user"]."</th>";   
-        echo "<th>".$LANG["task"]."</th>";
-        echo "<th>".$LANG["statuse"]."</th>";
-        echo "<th class=\"center_me\">".$LANG["daysopen"]."</th>";
-        echo "<th class=\"duedate\">".$LANG["duedate"]."</th>";
+        echo "<th class=\"priorities priority_column\">".$LANG["priority"]."</th>";
+        echo "<th class=\"scene_column\">".$LANG["scene"]."</th>";
+        echo "<th class=\"shot_column\">".$LANG["shot"]."</th>";
+        echo "<th class=\"frames_column\">".$LANG["frames"]."</th>";
+       echo "<th class=\"user_column\">".$LANG["user"]."</th>";   
+        echo "<th class=\"task_column\">".$LANG["task"]."</th>";
+        echo "<th class=\"statuse_column\">".$LANG["statuse"]."</th>";
+        echo "<th class=\"daysopen_column\">".$LANG["daysopen"]."</th>";
+        echo "<th class=\"duedate duedate_column\">".$LANG["duedate"]."</th>";
 
-        echo "<th></th>";
+        echo "<th class=\"buttons_column\">Actions</th>";
         echo "</tr>";
         echo "</thead>";
                     echo "<tbody>";     
@@ -173,7 +173,7 @@ function listshots($json_a,$shotstatus,$outputformat) {
 
                         echo "<tr id=".$item.">";
                                     #Prio
-                    echo "<td class=\"priorities\"><p></p>";
+                    echo "<td class=\"priorities\">";
 
                     switch ($shot["priority"]) {
                         case 1:
@@ -240,7 +240,7 @@ $select = '<select class="form-control select_statuse" name="statuse" id="'.$ite
 
                 echo "<td class=\"status_column\">".$select."</td>";              
 
-                    echo "<td class=\"center_me\">".$dayopen."</td>";
+                    echo "<td class=\"daysopen_column\">".$dayopen."</td>";
 
                     #due date
                     echo "<td class=\"duedate\">";
@@ -283,7 +283,7 @@ $select = '<select class="form-control select_statuse" name="statuse" id="'.$ite
 
                     echo "</td>";
                                     #action:
-                    echo "<td class=\"pull-right action_buttons\"> ";
+                    echo "<td class=\"action_buttons\">";
 
                     switch ($shotstatus) {
                         case 'open':

@@ -310,7 +310,7 @@ else if ($register == TRUE) {
 				<form class="form-signin">
 				     <h2 class="form-signin-heading">Registration Successful</h2>
 				     	 <div class="form-group">
-				     <h2><span class="label label-success"><i class="fa fa-thumbs-o-up"></i> New Login Created!</span></h2>
+				     <h1><span class="label btn-block label-success"><i class="fa fa-thumbs-o-up"></i> New Login Created!</span></h1>
 						</div>
 	
 		
@@ -494,9 +494,37 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 	
 	<div class="container">    
 			
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	      <div class="page-header">
+				<h2>Logins</h2>    
+      	</div>
+      	
 
+<?php
+$logFile = 'users.txt';
+$lines = file($logFile); 
+$table = '<table class="table"><tr><th></th><th>ID</th><th>Username</th><th>email</th></tr>'; 
+foreach($lines as $line){ // We are going to loop through each line
+    list($id, $username, $email, $password) = explode('||', $line);
+    $username_decoded = decode($username,$keyCode);
+    $email_decoded = decode($email,$keyCode);
+    $gravatar_email = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email_decoded ) ) ) . "?size=64"; 
+    $table .= "<tr><td><img class=\"img-circle\" src=\"$gravatar_email\" alt=\"\" /></td><td>$id</td><td>$username_decoded</td><td>$email_decoded</td></tr>";
+}
+$table .= '</table>';
+echo $table;
+    ?>   	
+ 
+
+
+      	
+			</div>
+
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				      <div class="page-header">
+				<h2>Create New Login</h2>    
+      	</div>
 				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="form-signin" method="post">
-				     <h2 class="form-signin-heading">Create New Login</h2>
 				    <div class="form-group">				     				     
 						<label class="sr-only">Username</label>				    
 				    <div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div>    											
@@ -533,7 +561,7 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 
 				</form>
 
-
+			</div>
     </div> <!-- /container -->	
 	
 	

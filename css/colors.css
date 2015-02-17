@@ -36,6 +36,11 @@ th {
 	color: ;	
 	}
 
+/* TABLE HEADING BACKGROUND COLOR */
+.tablesorter-headerRow {
+	background-color: ;
+	}
+
 /* TABLE CONTENT TEXT COLOR */	
 td {
 	color: ;	
