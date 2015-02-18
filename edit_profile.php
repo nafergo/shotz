@@ -68,19 +68,19 @@
 				<h1>Your Profile</h1>    
       	</div>
 	
-	<div class="col-lg-6">
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
 				   
-				   
+				   				<form name="form" class="form-signin" method="post">
 				   <p><img class="img-circle" src="http://www.gravatar.com/avatar/<?php echo md5(strtolower(trim($_SESSION['ls_email']))); ?>?size=128" alt=""></p>				   
 				   <h4><strong><i class="fa fa-user"></i> Username</strong> <?php echo $_SESSION['ls_user'] ?></h4>
 				   <h4><strong><i class="fa fa-envelope-o"></i> Email</strong> <?php echo $_SESSION['ls_email']; ?></h4>
-				   
+				   				</form>
 	</div>
   					
 
 
-<div class="col-lg-6">
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				
 
 

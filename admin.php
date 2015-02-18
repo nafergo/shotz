@@ -13,7 +13,7 @@ $link = file_get_contents('storage/shot.json');
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -82,7 +82,7 @@ $link = file_get_contents('storage/shot.json');
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+		<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
 			<button type="button" class="center-block btn btn-default btn-lg artistsadmin" data-toggle="modal" data-target="#usersModal">
 				<i class="fa fa-users fa-4x"></i>
 				<h2><?php echo "".$LANG["usersadmin"]."";?></h2>
@@ -137,7 +137,7 @@ if (file_exists($usersmyfile)) {
 
 		</div>
 
-		<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+		<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
 		
 			<button type="button" class="center-block btn btn-default btn-lg tasksadmin" data-toggle="modal" data-target="#taskModal">
 				<i class="fa fa-wrench fa-4x"></i>
@@ -193,7 +193,7 @@ if (file_exists($taskmyfile)) {
 
 
 	</div>
-			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
 				<button type="button" class="center-block btn btn-default btn-lg statusesadmin" data-toggle="modal" data-target="#statuseModal">
 				<i class="fa fa-cogs fa-4x"></i>
 				<h2><?php echo "".$LANG["statusesadmin"]."";?></h2>
@@ -253,7 +253,7 @@ if (file_exists($statusmyfile)) {
 
 </div>
 
-			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
 
 				<button type="button" class="center-block btn btn-default btn-lg colorsadmin" data-toggle="modal" data-target="#colorseModal">
 				<i class="fa fa-tint fa-4x"></i>
@@ -314,22 +314,18 @@ if (file_exists($colorsmyfile)) {
 
 			</div>
 
+			</div>
 
-			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+<div class="row">
+			<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
 
 				<a  href="<?php echo $_SERVER['PHP_SELF'] ?>?ls_register"  type="button" class="center-block btn btn-default btn-lg loginsadmin">
 				<i class="fa fa-key fa-4x"></i>
 				<h2>Logins</h2>
 				</a>
 
-</div>
-
-
-
-
-
 			</div>
-
+</div>
 
 
 </div>
