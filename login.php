@@ -603,7 +603,7 @@ else if (!isset($_SESSION['ls_id']) && !isset($_SESSION['ls_user']) && !isset($_
 
 	<div class="container">    
 			
-				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="form-signin" method="post"><h1 class="login_title">Shotz</h1>
+				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="form-signin" method="post"><h1 class="login_title">Sh<i class="fa fa-bullseye"></i>tz</h1>
 				     <h2 class="form-signin-heading">Please sign in</h2>
 				    <div class="form-group">
 				    <label for="inputUser" class="sr-only">User</label>
