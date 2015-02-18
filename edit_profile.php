@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
+<meta name="author" content="nafergo" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -64,13 +64,12 @@
 	
 	<div class="container">    
 	<div class="row">
-	
+		      <div class="page-header">
+				<h1>Your Profile</h1>    
+      	</div>
 	
 	<div class="col-lg-6">
 
-
-
-				     <h1>Your Profile</h1>						
 				   
 				   
 				   <p><img class="img-circle" src="http://www.gravatar.com/avatar/<?php echo md5(strtolower(trim($_SESSION['ls_email']))); ?>?size=128" alt=""></p>				   

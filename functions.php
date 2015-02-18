@@ -144,7 +144,7 @@ function listshots($json_a,$shotstatus,$outputformat) {
     
     array_sort_by_column($json_a, 'priority');
 
-        echo "<table id=\"sortedtable\" class=\"table tablesorter table-striped\">";
+        echo "<table id=\"shots_table\" class=\"table display table-striped\">";
         echo "<thead>";
         echo "<tr>";
         echo "<th class=\"priorities priority_column\">".$LANG["priority"]."</th>";
@@ -283,7 +283,7 @@ $select = '<select class="form-control select_statuse" name="statuse" id="'.$ite
 
                     echo "</td>";
                                     #action:
-                    echo "<td class=\"action_buttons\">";
+                    echo "<td nowrap class=\"action_buttons\">";
 
                     switch ($shotstatus) {
                         case 'open':

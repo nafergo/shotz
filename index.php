@@ -15,23 +15,25 @@ $link = file_get_contents('storage/shot.json');
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nelson gonçalves" >
-
+<meta name="author" content="nafergo" >
+ <link rel="icon" href="favicon.ico" type="image/ico" sizes="64x64"> 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
-
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
-<link rel="stylesheet" type="text/css" href="css/shotz.css" media="all" />   
-<link rel="stylesheet" type="text/css" href="css/colors.css" media="all" />                        
+                     
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="css/dataTables.bootstrap.css">
+<link rel="stylesheet" href="css/dataTables.fontAwesome.css">
 
- <link rel="icon" href="favicon.ico" type="image/ico" sizes="64x64"> 
 
 
+<link rel="stylesheet" type="text/css" href="css/shotz.css" media="all" />   
+<link rel="stylesheet" type="text/css" href="css/colors.css" media="all" />   
 
       
 </head>
@@ -97,7 +99,7 @@ $link = file_get_contents('storage/shot.json');
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	      <div class="page-header">
-				<h1><?php echo "".$LANG["todo"]."";?> </h1><small>Click on column headers to sort data</small>
+				<h1><?php echo "".$LANG["todo"]."";?> </h1>
       	</div>				  				    
 				<p><?php listshots($json_a,"open","table"); ?></p>
 

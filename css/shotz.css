@@ -21,7 +21,9 @@ h1.login_title {text-transform: uppercase; font-weight: 300; font-size: 3em;}
 
 .row {margin-left: 0px; margin-right: 0px;}
 
-.tablesorter tr {font-size: 0.75em;}
+#shots_table tr {font-size: 0.75em;}
+
+#shots_table select {font-size: 1em;}
 
 .high_priority {height: 100%;	text-transform: uppercase;	text-align: center;	padding: 2px;}
 .normal_priority {height: 100%; text-transform: uppercase;	text-align: center;	padding: 2px;}
@@ -36,67 +38,29 @@ h1.login_title {text-transform: uppercase; font-weight: 300; font-size: 3em;}
 .action_buttons a {font-size: 1em;	width: 40px; margin-bottom: 3px;}
 
 
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    border: 1px solid #FFF;
+    background: transparent;
+}
+
+
 /*---------------------------------
 	TABLES
+
+.priority_column{width: ;}
+.scene_column {width: ;}
+.shot_column{width: ;}
+.frames_column {width: ;}
+.user_column {width: ;}
+.task_column {width: ;}
+.statuse_column {width: ;}        
+.duedate_column {width: ;}
+.daysopen_column{display: }
+.buttons_column {width: ;}
+}
+
+
 -----------------------------------*/
-
-@media(max-width:767px){
-.priority_column{width: 5%;}
-.scene_column {width: 20%;}
-.shot_column{width: 20%;}
-.frames_column {width: 3%;}
-.user_column {width: 10%;}
-.task_column {width: 10%;}
-.statuse_column {width: 10%;}        
-.duedate_column {width: 8%;}
-.daysopen_column{display: none;}
-.buttons_column {width: 14%;}
-}
-
-@media(min-width:768px){
-.priority_column{width: 5%;}
-.scene_column {width: 20%;}
-.shot_column{width: 20%;}
-.frames_column {width: 3%;}
-.user_column {width: 10%;}
-.task_column {width: 10%;}
-.statuse_column {width: 10%;}        
-.duedate_column {width: 8%;}
-.duedate_column2 {max-width: 150px;}
-.daysopen_column{display: none;}
-.buttons_column {width: 14%;}
-}
-
-@media(min-width:992px){
-.priority_column{width: 5%;}
-.scene_column {width: 20%;}
-.shot_column{width: 20%;}
-.frames_column {width: 3%;}
-.user_column {width: 10%;}
-.task_column {width: 10%;}
-.statuse_column {width: 10%;}        
-.duedate_column {width: 8%;}
-.duedate_column2 {max-width: 150px;}
-.daysopen_column{display: none;}
-.buttons_column {width: 14%;}
-}
-
-@media(min-width:1200px){
-.priority_column{width: 80px;}
-.scene_column {width: auto;}
-.shot_column{width: auto;}
-.frames_column {width: 50px;}
-.user_column {width: 150px;}
-.task_column {width: 150px;}
-.statuse_column {width: 150px;}        
-.duedate_column {width: 80px;}
-.duedate_column2 {width: 150px;}
-.daysopen_column{display: none;}
-.buttons_column {width: 150px;}
-}
-
-
-
 
 
 
@@ -114,7 +78,7 @@ th {color:#000;}
 
 td {color:#000;}		
 
-.tablesorter-headerRow {background-color: #e0e0e0;}
+#shots_table th {background-color: #e0e0e0;}
 
 td.artist_column {background-color: #536dfe;}	
 

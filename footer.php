@@ -2,13 +2,9 @@
 
 
 ?>
-<p></p>
-<br>
-<p></p>
-<br>
-<p></p>
-<div class="row">
 	<div class="container-fluid">
+<div class="row">
+
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 		
 
@@ -138,7 +134,9 @@ an important issue for us right now. For now, just edit the shot.json file ;)</p
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
+ 
  
 
         <script type="text/javascript">
@@ -177,9 +175,19 @@ $(document).ready(function(){
 
 });
 
-$(function(){
-$("#sortedtable").tablesorter({ sortList: [[2,0]] });
-});
+
+$(document).ready(function() {
+    $('#shots_table').dataTable( {
+        "columnDefs": [
+            {
+                "targets": [ 7 ],
+                "visible": false,
+                "searchable": false
+            },
+        ]
+    } );
+} );
+
 
 
 });
