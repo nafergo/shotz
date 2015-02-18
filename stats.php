@@ -151,7 +151,61 @@ $countpercentframes = round($countpercentframes); //
     			<?php echo($countpercentframes); ?>%
   			</div>
 		</div>
+		
+				</div>
+		
+		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
+		
+		<h4>Calculate the seconds</h4>
+	
+	
+<form class="form-horizontal" method="post" action="">
 
+<?php
+
+if (isset($_POST['valuea'])) $valuea = $_POST['valuea'];
+if (isset($_POST['valueb'])) $valueb = $_POST['valueb'];
+$answer = $valuea / $valueb;
+
+echo <<<_END
+
+  <div class="form-group">
+    <label for="frames" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 control-label">Frames</label>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+      <input class='form-control' type='text' name='valuea' value="$countframesclosed"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="fps" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 control-label">FPS</label>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+<select class="form-control" name="valueb" value="$valueb">
+<option value="6">6</option>
+<option value="12">12</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="30">30</option>
+<option value="50">50</option>
+        </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2 col-sm-offset-2 col-sm-2 col-xs-4 col-xs-offset-2">
+      <button class="btn btn-primary" value="Calculate" type="submit">Calculate</button>
+    </div>
+  </div>    
+
+	
+ 					
+_END;
+?>
+<div class="form-group">    
+    <div class="col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2 col-sm-offset-2 col-sm-2 col-xs-4 col-xs-offset-2">
+<p>You have <strong><?php echo round($answer)?></strong> seconds</p>
+    </div>
+      </div>
+</form> 
 
 		</div>
 

@@ -112,7 +112,7 @@ echo $select;
     echo "</td><td class=\"pull-right\">";
     echo "<input type=\"hidden\" name=\"action\" value=\"add\"></input>";
     echo "<input name=\"dateadded\" type=\"hidden\" value=\"${vandaag}\"></input>\n";
-    echo "<button type=\"submit\" name=\"submit\" class=\"btn btn-default\">".$LANG["addshot"]."</button>";
+    echo "<button type=\"submit\" name=\"submit\" class=\"pull-right btn btn-primary\">".$LANG["addshot"]."</button>";
     echo "</form>";   
     echo "</tbody>";    
     echo "</table>";
@@ -157,7 +157,7 @@ function listshots($json_a,$shotstatus,$outputformat) {
         echo "<th class=\"daysopen_column\">".$LANG["daysopen"]."</th>";
         echo "<th class=\"duedate duedate_column\">".$LANG["duedate"]."</th>";
 
-        echo "<th class=\"buttons_column\">Actions</th>";
+        echo "<th class=\"buttons_column\"></th>";
         echo "</tr>";
         echo "</thead>";
                     echo "<tbody>";     

@@ -181,7 +181,7 @@ echo $select;
     echo "<input type=\"hidden\" name=\"action\" value=\"update\"></input>";
     echo "<input name=\"dateadded\" type=\"hidden\" value=\"".$shot["dateadded"]."\"></input>\n";
     echo "<input type=\"hidden\" name=\"id\" value=\"".  $item ."\"></input>";
-    echo "<button type=\"submit\" name=\"submit\" class=\"btn btn-default\">".$LANG["updateshot"]."</button>";
+    echo "<button type=\"submit\" name=\"submit\" class=\"pull-right btn btn-primary\">".$LANG["updateshot"]."</button>";
         
     echo "</form>";
     echo "</td>";
