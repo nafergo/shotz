@@ -49,7 +49,7 @@ $countpercentframes = round($countpercentframes); //
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -156,9 +156,11 @@ $countpercentframes = round($countpercentframes); //
 		
 		<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
 		
-		<h4>Calculate the seconds</h4>
+
 	
-	
+<div class="row">
+		<h3 class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-12 col-xs-12">Calculate the seconds</h3>
+</div>	
 <form class="form-horizontal" method="post" action="">
 
 <?php
@@ -201,7 +203,7 @@ echo <<<_END
 _END;
 ?>
 <div class="form-group">    
-    <div class="col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2 col-sm-offset-2 col-sm-2 col-xs-4 col-xs-offset-2">
+    <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
 <p>You have <strong><?php echo round($answer)?></strong> seconds</p>
     </div>
       </div>

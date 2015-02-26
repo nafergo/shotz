@@ -23,6 +23,8 @@ h1.login_title {text-transform: uppercase; font-weight: 300; font-size: 3em;}
 
 #shots_table tr {font-size: 0.75em;}
 
+.table > tbody > tr > td {vertical-align: middle;}
+
 #shots_table select {font-size: 1em;}
 
 .high_priority {height: 100%;	text-transform: uppercase;	text-align: center;	padding: 2px;}

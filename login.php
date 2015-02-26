@@ -158,7 +158,7 @@ if ($login == TRUE) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -247,7 +247,7 @@ else if ($register == TRUE) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -337,7 +337,7 @@ else if ($register == TRUE) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -435,7 +435,7 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -494,36 +494,31 @@ else if (isset($_GET['ls_register']) && $registration == 1) {
 	
 	<div class="container">    
 			
-			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	      <div class="page-header">
 				<h2>Logins</h2>    
       	</div>
       	
 
-<?php
-$logFile = 'users.txt';
-$lines = file($logFile); 
-$table = '<table class="table"><tr><th></th><th>ID</th><th>Username</th><th>email</th></tr>'; 
-foreach($lines as $line){ // We are going to loop through each line
-    list($id, $username, $email, $password) = explode('||', $line);
-    $username_decoded = decode($username,$keyCode);
-    $email_decoded = decode($email,$keyCode);
-    $gravatar_email = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email_decoded ) ) ) . "?size=64"; 
-    $table .= "<tr><td><img class=\"img-circle\" src=\"$gravatar_email\" alt=\"\" /></td><td>$id</td><td>$username_decoded</td><td>$email_decoded</td></tr>";
-}
-$table .= '</table>';
-echo $table;
-    ?>   	
- 
 
 
-      	
-			</div>
 
-			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-				      <div class="page-header">
-				<h2>Create New Login</h2>    
-      	</div>
+
+		
+			<button type="button" class="pull-right btn btn-default" data-toggle="modal" data-target="#create_new_loginModal">
+			<i class="fa fa-key"></i> Create New Login
+			</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="create_new_loginModal" tabindex="-1" role="dialog" aria-labelledby="create_new_loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title" id="create_new_loginModalLabel">Create New Login</h3>
+      </div>
+      <div class="modal-body">
 				<form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="form-signin" method="post">
 				    <div class="form-group">				     				     
 						<label class="sr-only">Username</label>				    
@@ -561,7 +556,37 @@ echo $table;
 
 				</form>
 
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<br /><br />
+
+<?php
+$logFile = 'users.txt';
+$lines = file($logFile); 
+$table = '<table class="table table-striped"><tr><th></th><th>ID</th><th>Username</th><th>email</th></tr>'; 
+foreach($lines as $line){ // We are going to loop through each line
+    list($id, $username, $email, $password) = explode('||', $line);
+    $username_decoded = decode($username,$keyCode);
+    $email_decoded = decode($email,$keyCode);
+    $gravatar_email = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email_decoded ) ) ) . "?size=64"; 
+    $table .= "<tr><td><img class=\"img-circle\" src=\"$gravatar_email\" alt=\"\" /></td><td>$id</td><td>$username_decoded</td><td>$email_decoded</td></tr>";
+}
+$table .= '</table>';
+echo $table;
+    ?>   	
+ 
+
+
+      	
 			</div>
+
+
     </div> <!-- /container -->	
 	
 	
@@ -578,7 +603,7 @@ else if (!isset($_SESSION['ls_id']) && !isset($_SESSION['ls_user']) && !isset($_
 <meta charset="UTF-8">
 <meta name="description" content="Web platform for short movie production tracking">
 <meta name="keywords" content="production, management, task, shot, animation, film, movie">
-<meta name="author" content="nafergo" >
+<meta name="author" content="nelson gonçalves" >
 
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
