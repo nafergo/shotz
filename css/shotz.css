@@ -1,0 +1,140 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+/*---------------------------------
+	LAYOUT
+-----------------------------------*/
+body{margin:0; padding:0; color:#000; font-family: 'Open Sans', sans-serif;}
+
+h1 {text-transform: uppercase;	font-weight: 300;	font-size: 2em;}
+
+h2 {text-transform: uppercase; font-weight: 300; font-size: 1.5em;}
+
+h1.login_title {text-transform: uppercase; font-weight: 300; font-size: 3em;}
+
+.navbar-brand{text-transform: uppercase;}
+
+.navbar-inverse {background-color: #262626; border-color: #080808;
+}
+
+.page-header {margin-top: 70px;}
+
+.margin-top-placeholder {margin-top: 3em;}
+
+.btn-lg {width: 80%;}
+
+.row {margin-left: 0px; margin-right: 0px;}
+
+#shots_table tr {font-size: 0.75em;}
+
+.table > tbody > tr > td {vertical-align: middle;}
+
+.form-control, .form_title {font-size: 0.75em;}
+
+#shots_table select {font-size: 1em;}
+
+.high_priority {height: 100%;	text-transform: uppercase;	text-align: center;	padding: 2px;}
+.normal_priority {height: 100%; text-transform: uppercase;	text-align: center;	padding: 2px;}
+.low_priority {height: 100%;	text-transform: uppercase;	text-align: center;	padding: 2px;}
+.onhold_priority {height: 100%;	text-transform: uppercase;	text-align: center;	padding: 2px;}
+
+.artistsadmin {margin-top: 1em; margin-bottom: 1em;}
+.tasksadmin {margin-top: 1em;	margin-bottom: 1em;}
+.statusesadmin {margin-top: 1em;	margin-bottom: 1em;}
+.colorsadmin {	margin-top: 1em;	margin-bottom: 1em;}
+.loginsadmin {	margin-top: 1em;	margin-bottom: 1em;}
+.action_buttons a {font-size: 1em;	width: 40px; margin-bottom: 3px;}
+
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    border: 1px solid #FFF;
+    background: transparent;
+}
+
+
+/*---------------------------------
+	TABLES
+-----------------------------------*/
+table.shotform {width: 100%}
+table.shotform th{width: 10%;}
+.priority_column{min-width: }
+.scene_column {min-width: }
+.shot_column{width: ;}
+.frames_column {width: ;}
+.user_column {width: ;}
+.task_column {width: ;}
+.statuse_column {width: ;}        
+.duedate_column {width: ;}
+.daysopen_column{display: }
+.buttons_column {width: ;}
+}
+
+
+
+
+
+
+
+/*---------------------------------
+	COLORS
+-----------------------------------*/
+h1 {color:#000;}
+
+h2 {color:#000;}
+
+.well-sm {background-color: #ECECEC;}
+
+th {color:#000;}
+
+td {color:#000;}		
+
+#shots_table th {background-color: #e0e0e0;}
+
+td.artist_column {background-color: #dcedc8;}	
+
+.table-striped > tbody > tr:nth-child(2n+1) > td.artist_column {background-color: #c5e1a5;}
+
+td.task_column {background-color: #ffe0b2;}	
+
+.table-striped > tbody > tr:nth-child(2n+1) > td.task_column {background-color: #ffcc80;}
+
+td.status_column {background-color: #e1bee7;}	
+
+.table-striped > tbody > tr:nth-child(2n+1) > td.status_column {background-color: #ce93d8;}	
+
+.high_priority {color: white;	background-color: #f44336;}
+
+.normal_priority {color: white; background-color: #4caf50;}
+
+.low_priority {color: white; background-color: #607d8b;}
+
+.onhold_priority {color: white; background-color: #9e9e9e;}
+
+.artistsadmin {background-color: ;	color: ;}
+
+.artistsadmin:hover {background-color: ;	color: ;}
+
+.artistsadmin h2 {color: ;}
+
+.tasksadmin {background-color: ;	color: ;}
+
+.tasksadmin:hover {background-color: ;	color: ;}
+
+.tasksadmin h2 {color: ;}
+
+.statusesadmin {background-color: ;	color: ;}
+
+.statusesadmin:hover {background-color: ;	color: ;}
+
+.statusesadmin h2 {color: ;}
+
+.colorsadmin {background-color: ; color: ;}
+
+.colorsadmin:hover {background-color: ;	color: ;}
+
+.colorsadmin h2 {color: ;}
+
+.loginsadmin {background-color: ; color: ;}
+
+.loginsadmin:hover {background-color: ; color: ;}
+
+.loginsadmin h2 {color: ;}

@@ -1,0 +1,7 @@
+Options -Indexes
+
+<FilesMatch "\.(json|txt)$">
+  Order deny,allow
+  Deny from all
+</FilesMatch>
+
